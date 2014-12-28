@@ -1,0 +1,42 @@
+# TOOL_MATERIALS.DAT
+##########################################################################
+#
+#   PURPOSE:
+#
+#      This is the database file used for defining Tool Material.
+#
+#   REVISED:
+#      Toni    Sun Dec 28 2014 02:03 AM
+#
+##########################################################################
+##########################################################################
+##
+##  The following key words for Attribute ids are defined
+##
+##  LIBREF   material_code         - Unique record identifier
+##                                   (Library Reference)
+##  MATNAM   material_name         - Material Name  (appears on the label)
+##  MATDESC  material_description  - Material Description
+#########################################################################
+#----------------+-------------------------------+-------------
+FORMAT LIBRF MATNAM MATDESC
+#--------------------------------------------------------------------------------
+DATA|TMC0_00001|HSS|High Speed Steel
+DATA|TMC0_00002|Carbide|Carbide, Uncoated (Brazed and Solid)
+DATA|TMC0_00003|Carbide|Carbide, Uncoated (Indexable)
+DATA|TMC0_00004|Carbide Coated|Carbide, Coated (Indexable - TiN, TiC, and Aluminum Oxide)
+DATA|TMC0_00006|HSS Coated|High Speed Steel Coated
+DATA|TMC0_00021|HSM Ball Mill TiAlN Coated|HSM Carbide Ball Mill
+DATA|TMC0_00022|HSM End Mill TiAlN Coated|HSM Carbide End Mill, up to 5% Corner Radius
+DATA|TMC0_00023|HSM Bull Nose Inserted|HSM Inserted Bull-nose Mill
+DATA|TMC0_00025|HSM End Mill Inserted|HSM Inserted End Mill, up to 5% Corner Radius
+DATA|TMC0_00026|HSM Ball Mill Inserted|HSM Inserted Ball Mill
+DATA|TMC0_00027|HSM Bull Nose TiAlN Coated|HSM Carbide Bull-nose Mill
+DATA|TMC0_00028|HSM End Mill Extra Long|HSM HardCut Inserted End Mill, Extra long
+DATA|TMC0_00041|Ruby|Ruby
+DATA|TMC0_00042|Silicon Nitride|Silicon Nitride
+DATA|TMC0_00043|Zirconia|Zirconia
+DATA|TMC0_00051|Brass Wire|Brass Wire
+DATA|TMC0_00052|Zinc Coated Brass Wire|Zinc Coated Brass Wire
+DATA|TMC0_00100|VHM ZOX|VHM, Coated
+DATA|TMC0_00101|VHM TiAlN|VHM, Coated

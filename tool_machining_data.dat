@@ -1,0 +1,44 @@
+# TOOL_MACHINING_DATA.DAT
+##########################################################################
+#
+#   PURPOSE:
+#
+#      This is the database file used for defining Machining Data in
+#      an operation based only on the selected tool.
+#
+#   REVISED:
+#      Toni    Sun Dec 28 2014 02:03 AM
+#
+##########################################################################
+# The data is organized in the following format separated by |
+# The fields in the database are in the following order:
+#
+#  LIBRF           - Unique record identifier
+#                     (Library Reference of cutter)
+#  DPT_CUT_IN      - dpth_of_cut                 Depth_of_cut(inch)
+#  DPT_CUT_MM      - dpth_of_cut                 Depth_of_cut(mm)
+#  STEPOVER_IN     - stepover distance (inch)
+#  STEPOVER_MM     - stepover distance (mm)
+#  SURF_SPEED_FPM  - surface_speed               Suface Speed(FPM)
+#  SURF_SPEED_MPM  - surface_speed               Suface Speed(MPM)
+#  FEED_IPT        - feed_per_tooth              Feed per Tooth(IPT)
+#  FEED_MMPT       - feed_per_tooth              Feed per Tooth(MMPT)
+#  APPROACH_PCT    - approach feedrate percentage of cut feedrate
+#  ENGAGE_PCT      - engage feedrate percentage of cut feedrate
+#  FRSTCUT_PCT     - first cut feedrate percentage of cut feedrate
+#  STEPOVER_PCT    - stepover feedrate percentage of cut feedrate
+#  RETRACT_PCT     - retract feedrate percentage of cut feedrate
+#  RETURN_PCT      - return feedrate percentage of cut feedrate
+#  DEPART_PCT      - departure feedrate percentage of cut feedrate
+#--------------------------------------------------------------------------------
+FORMAT LIBRF DPT_CUT_IN DPT_CUT_MM STEPOVER_IN STEPOVER_MM SURF_SPEED_FPM SURF_SPEED_MPM FEED_IPT FEED_MMPT APPROACH_PCT ENGAGE_PCT FRSTCUT_PCT STEPOVER_PCT RETRACT_PCT RETURN_PCT DEPART_PCT
+#--------------------------------------------------------------------------------
+DATA|202255_12_Alu_kurz|0.393701|10.000000|0.078740|2.000000|1574.754239|479.985092|0.001237|0.031417|0|50|50|0|0|0|0
+DATA|202248_8_Alu_kurz|0.314961|8.000000|0.094488|2.400000|1484.217001|452.389342|0.001458|0.037037|0|50|50|0|0|0|0
+DATA|202551_8_Alu_kurz|0.236220|6.000000|0.047244|1.200000|1085.952106|330.998202|0.000972|0.024677|0|50|50|0|0|0|0
+DATA|202160_4.5_1.2379|0.196850|5.000000|0.023622|0.600000|262.467192|80.000000|0.000591|0.015020|0|50|50|0|0|0|0
+DATA|202248_10_Alu_kurzspanend|0.314961|8.000000|0.078740|2.000000|1574.816083|480.003942|0.001220|0.031000|0|50|50|0|0|0|0
+DATA|Lerrox_3_Alu_kurz|0.078740|2.000000|0.031496|0.800000|459.303320|139.995652|0.000394|0.010000|0|50|50|0|0|0|0
+DATA|Lerrox_2_Alu_kurz|0.078740|2.000000|0.019685|0.500000|371.054250|113.097336|0.000315|0.008000|0|50|50|0|0|0|0
+DATA|Lerrox_1_Alu_kurz|0.039370|1.000000|0.007874|0.200000|185.527125|56.548668|0.000197|0.005000|0|50|50|0|0|0|0
+DATA|202551_12_ALU_KURZ|0.393701|10.000000|0.023622|0.600000|1113.162753|339.292007|0.000875|0.022222|0|50|50|0|0|0|0
