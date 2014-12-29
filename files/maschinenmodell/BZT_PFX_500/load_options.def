@@ -1,0 +1,19 @@
+LoadOptions_SearchPaths: E:\\NX\\ "C:\\Program Files\\Siemens\\NX 9.0\\MACH\\resource\\library\\machine\\installed_machines\\BZT_PFX_500" 
+LoadOptions_LoadComponents: load_all_components
+LoadOptions_LoadFully: NO
+LoadOptions_UseLightweightRepresentations: NO
+LoadOptions_LoadWAVE: NO
+LoadOptions_LoadWAVEParents: NONE
+LoadOptions_LoadSubstitution: dont_allow_substitution
+LoadOptions_LoadLatest: NO
+LoadOptions_LoadOption: load_from_search_dirs
+LoadOptions_ManagedModeLoadOption: load_by_revision_rule
+LoadOptions_LoadFilters: load_no_components
+LoadOptions_LoadFailOption: dont_abort
+LoadOptions_ReferenceSets: "As Saved" "Entire Part" "Empty" "Use Model" 
+LoadOptions_ApplyAllLevels: NO
+LoadOptions_GenerateMissingPFM: YES
+LoadOptions_BookmarkRefSets: Import
+LoadOptions_BookmarkPartsLoad: Load_Visible
+LoadOptions_BookmarkRestoreFullyLoadedState: no
+LoadOptions_SubsetLoadBehavior: Do_Not_Update
