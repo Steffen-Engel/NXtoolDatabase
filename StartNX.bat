@@ -27,22 +27,25 @@ if exist %nx9%\MACH\resource\library\tool\metric\tool_database.dat.orig (
 
 :: Erster Lauf - Backup machen
 :firstrun
-@echo firstrun
+
 @copy %lib%\tool\metric\tool_database.dat %lib%\tool\metric\tool_database.dat.orig
 qcopy %lib%\tool\metric\holder_database.dat %lib%\tool\metric\holder_database.dat.orig
 @copy %lib%\feeds_speeds\ascii\tool_materials.dat %lib%\feeds_speeds\ascii\machining_data.dat.orig
 @copy %lib%\feeds_speeds\ascii\tool_machining_data.dat %lib%\feeds_speeds\ascii\tool_machining_data.dat.orig
+@copy %lib%\machine\ascii\machine_database.dat %lib%\machine\ascii\machine_database.dat
 
 goto normal
 
 
 :: Normale Verwendung - Dateien kopieren
 :normal
-@echo normal
+
 @copy %repo%\files\tool_database.dat %lib%\tool\metric\
 @copy %repo%\files\holder_database.dat %lib%\tool\metric\
 @copy %repo%\files\tool_materials.dat %lib%\feeds_speeds\
 @copy %repo%\files\tool_machining_data.dat %lib%\feeds_speeds\
+@copy %repo%\files\maschinenmodell\machine_database.dat %lib%\machine\ascii\
+@xcopy %repo%\files\maschinenmodell\BZT_PFX_500 %lib%\machine\installed_machines\BZT_PFX_500 /e/i
 
 goto start
 
