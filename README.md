@@ -23,4 +23,5 @@ Wenn nicht, schau zuerst, ob die Windows-Konsole einen Fehler geworfen hat und k
 
 #### TODOs?
 ja sicher!
+
 Es wäre schön, noch ein **git pull** mit in die batchdatei einzubauen, dass sich mit einem Klick zuerst das Repository aktualisiert, dann die Dateien korrekt in den NX-Programmordner kopiert werden und dann schließlich das Programm gestartet wird.
