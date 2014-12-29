@@ -13,4 +13,14 @@ Die Dateien müssen vor dem Start von NX in den Installationsordner kopiert werd
 Es kopiert nur die Datenbankdateien über die Orginaldateien, wobei es ein mal (beim ersten Ausführen) eine Kopie der Orginaldateien anlegt und startet dann NX.
 
 ### Nötige Anpassungen des batchfiles vor der ersten Verwendung:
-Vollzugriffsrechte am Ordner **MECH** beschaffen. Der Ordner ist unter C:\Program
+* Vollzugriffsrechte am Ordner **MECH** beschaffen. Der Ordner ist unter "C:\Program Files\Siemens\NX 9.0" zu finden.
+* erstellen einer Verknüpfung zur batchdatei *StartNX.bat*, die im Repo auf der obersten Ebene zu finden ist. z.B. auf dem Windows-Desktop
+* Anpassen der Variablen *repo*, *nx9* und *lib* in der batchdatei auf das eigene System
+
+### Was noch?
+nichts. Doppelklick die batchdatei und schau selbst, ob NX startet und die Werkzeuge da sind.
+Wenn nicht, schau zuerst, ob die Windows-Konsole einen Fehler geworfen hat und kontrolliere auch, ob die Variablen richtig konfiguriert sind! 
+
+#### TODOs?
+ja sicher!
+Es wäre schön, noch ein **git pull** mit in die batchdatei einzubauen, dass sich mit einem Klick zuerst das Repository aktualisiert, dann die Dateien korrekt in den NX-Programmordner kopiert werden und dann schließlich das Programm gestartet wird.
