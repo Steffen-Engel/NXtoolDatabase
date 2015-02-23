@@ -5,17 +5,17 @@
 
 :: Variablen:
 @set repo=E:\Dokumente\dev\NXtoolDatabase
-@set nx9="C:\Program Files\Siemens\NX 9.0"
-@set lib="C:\Program Files\Siemens\NX 9.0\MACH\resource\library"
+::@set nx="C:\Program Files\Siemens\NX 10.0"
+@set lib="C:\Program Files\Siemens\NX 10.0\MACH\resource\library"
 
 
 @echo off
-echo Guten Tag!
-pause
+::echo Guten Tag!
+::pause
 
 :: prüfe ob schon eine Backupdatei existiert...
 
-if exist %nx9%\MACH\resource\library\tool\metric\tool_database.dat.orig (
+if exist %lib%\tool\metric\tool_database.dat.orig (
 	@echo "alles ok. Update Datenbanken"
 	goto normal
 ) else (
@@ -29,7 +29,7 @@ if exist %nx9%\MACH\resource\library\tool\metric\tool_database.dat.orig (
 :firstrun
 
 @copy %lib%\tool\metric\tool_database.dat %lib%\tool\metric\tool_database.dat.orig
-qcopy %lib%\tool\metric\holder_database.dat %lib%\tool\metric\holder_database.dat.orig
+@copy %lib%\tool\metric\holder_database.dat %lib%\tool\metric\holder_database.dat.orig
 @copy %lib%\feeds_speeds\ascii\tool_materials.dat %lib%\feeds_speeds\ascii\machining_data.dat.orig
 @copy %lib%\feeds_speeds\ascii\tool_machining_data.dat %lib%\feeds_speeds\ascii\tool_machining_data.dat.orig
 @copy %lib%\machine\ascii\machine_database.dat %lib%\machine\ascii\machine_database.dat
@@ -45,19 +45,19 @@ goto normal
 @copy %repo%\files\tool_materials.dat %lib%\feeds_speeds\
 @copy %repo%\files\tool_machining_data.dat %lib%\feeds_speeds\
 @copy %repo%\files\maschinenmodell\machine_database.dat %lib%\machine\ascii\
-@xcopy %repo%\files\maschinenmodell\BZT_PFX_500 %lib%\machine\installed_machines\BZT_PFX_500 /e/i
-
+@xcopy %repo%\files\maschinenmodell\BZT_PFX_500 %lib%\machine\installed_machines\BZT_PFX_500 /e/i/y
 goto start
 
 
 :: aktualisieren des Maschinenmodells und start des Programms 
 :start
-@cd "C:\Program Files\Siemens\NX 9.0\UGII\"
-@call "C:\Program Files\Siemens\NX 9.0\UGII\ugraf.exe" -nx
+@cd "C:\Program Files\Siemens\NX 10.0\UGII\"
+@call "C:\Program Files\Siemens\NX 10.0\UGII\ugraf.exe" -nx
 
 goto ende
 
 :: ende des Pr0gramms...
 :ende
 :: nichts mehr zu tun.
+::pause
 exit
