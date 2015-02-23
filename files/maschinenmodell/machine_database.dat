@@ -6,7 +6,7 @@
 ##
 ##
 ##  REVISED:
-##     Toni    Sun Dec 28 2014 02:03 AM
+##     Toni    Mon Feb 09 2015 05:50 PM
 ##
 ##  The following key words for Attribute ids are defined
 ##
@@ -31,5 +31,5 @@
 ##############################################################################
 FORMAT LIBRF T DESCR CNTR MNF POST RIGID GRAPHICS
 #--------------------------------------------------------------------------------
-DATA|Null Machine|MDM0901|Null Machine|None|-|${UGII_CAM_POST_DIR}template_post.dat|1.000000| 
 DATA|BZT_PFX_500|MDM0101|BZT_PFX_500||BZT|${UGII_CAM_LIBRARY_INSTALLED_MACHINES_DIR}BZT_PFX_500\BZT_PFX_500.dat|1.000000|${UGII_CAM_LIBRARY_INSTALLED_MACHINES_DIR}BZT_PFX_500\kinematic
+DATA|Null Machine|MDM0901|Null Machine|None|-|${UGII_CAM_POST_DIR}template_post.dat|1.000000| 

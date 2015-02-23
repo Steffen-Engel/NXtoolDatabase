@@ -5,7 +5,68 @@
 #   Creation date         : 02/10/03 14:42:04
 #   Unit                  : Metric
 #
-# 
+# 7mar2004  mjr  change ball tool mapping
+# 28mar2005 rlm  restructure for tool export functionality
+# 21apr2005 rlm  fix error in OD and ID format
+# 27may2005 rlm  fix error in Turning Standard format
+# 04Aug2005 rlm  replace fields removed in restructure.
+# 17Feb2006 rlm  add Mill Form Tool, Turn Form tool and new Step Drill FORMAT
+# 28Nov2006 rlm  Add Solid Model Tools
+# 18sep2007 mjr  add mill form tools
+# 06feb2008 mjr  add probe
+# 07feb2008 mjr  remove tool numbers
+# 25apr2008 mjr  fix holder number on ugt0201_004
+# 15jul2008 mjr  match MATDES with tool_materials.dat PR4181848
+# 09apr2009 mjr  add back corner round mill form tools
+# 08feb1020 mjr  change many flute lengths to be less then height
+# 09feb2010 cap  Minor modifications and additions to turning tools.
+# 20Jul2010 Peter Mao    camarch8001 - shank tool and chamfer mill
+# 19Aug2010 Peter Mao   camarch8001 - spherical mill
+# 15sep2010 mjr  Change mill form tools flutes to 2.
+# 14Oct2010 Peter Mao    camarch8002 - tool library alignment
+#                              CENTER_DRILL: add BANG BDIA
+#                              STD_DRILL and COUNTER_BORE: add COR1
+#                              REAMER and TAP: add SDIA TAPA TDD
+#                              Add new class SPOT_FACING
+#                              Turning: MNBD MNTR XMOUNT YMOUNT
+#                              Mill: add CTH
+#                              Button: add UGT UGST
+#                              MILL_FORM: add FLEN
+#                              Mill and Drill: add ZMOUNT
+# 03Nov2010 Peter Mao    Add a line in the mapping table for button
+#                        Add comments for TPREF and RIGID
+# 12Nov2010 Peter Mao    camarch8002 - Add TIPA to end mill
+# 15Nov2010 Peter Mao    camarch8001 - Machining parameters on cutter
+# 14Jan2011 Peter Mao    correct spelling mistake
+# 17Jan2011 Mark Rief    Add flute length to mill_form tools
+# 01Mar2011 Mark Rief    Replace chamfer mills ugt0201_110 111 with ugt0205_1001 1002.
+#                        Add spherical mill samples.
+# 02Mar2011 Peter Mao    Add face grooving
+# 08apr2011 Mark Rief    fix libref indexes for new tools.
+# 22apr2011 Mark Rief    Remove remaining tool, adjust, cuctom numbers.
+#                        Reclassify face grooving tool
+# 27Jun2011 Peter Mao    Add Coolant Through for drilling tool
+# 09sep2011 Mark Rief    Fix core drill flute lengths to be less then height
+# 13Sep2011 Peter Mao    1849514 Add turning holder library reference
+# 14Sep2011 Peter Mao    6588605 Set all ZOFF to zero
+# 08Nov2011 Peter Mao    Add HANGLE for turning tool
+# 06Jan2012 Mark Rief    1880063 correct invalid tool parameters
+# 06Apr2012 Mark Rief    Add new drills to table in comments, remove tabs, sort list.
+# 28Sep2012 Mario Mao    camarch9042 - add point length and core drill
+# 04Jan2013 Cheng Wang   Add Laser tool <camarch9030>
+# 15Jan2013 Mario Mao    change PNTA, PNTL and description for CORE_DRILL_NON_INDEXABLE
+# 17Jan2013 Mario Mao    cammill9070 - add system track points for T cutters
+# 22Jan2013 Mario Mao    compute point length
+# 25Jan2013 Mario Mao    1912099 Add tip angle for OD/ID/Face Grooving
+# 31Jan2013 Carl Shang   camuif9095 - add wire tool
+# 01Feb2013 Mario Mao    6817429 add HLD and HLDDES for barrel mill and mill form
+# 04Feb2013 Mario Mao    6835301 Add Designation
+# 07Feb2013 Mario Mao    6806427 Add flute length for center drill and counter sink
+# 13Feb2013 Mario Mao    1861170 Add trackpoints for groovings
+# 09Apr2013 Mario Mao    6861162 Set flute length to empty for spot drill
+# 14May2013 Peter Mao    Change UGST of face mill
+# 17Jun2013 Mark Rief    Edit ugt0202_001 length to match graphics.
+# 27Jun2013 Mark Rief    Add Wire samples
 #=======================================================================
 
 #
@@ -246,6 +307,7 @@
 #CLASS END_MILL_NON_INDEXABLE
 FORMAT LIBRF T ST UGT UGST DESCR MATREF MATDES TLNUM ADJREG CUTCOMREG HLD HLDDES DIA FN HEI ZOFF DROT FLEN TAPA TIPA COR1 CTH HOFF ZMOUNT RIGID TSDIA TSLEN TSTLEN RAMPANGLE HELICALDIA MINRAMPLEN MAXCUTWIDTH HLDREF TPREF
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DATA | 201242_4_Alu_kurz | 02 | 1 | 01 | 1 |  | TMC0_00001 | High Speed Steel | 42 | 42 | 42 |   |   | 4.00000 | 2 | 17.00000 | 0.00000 | 3 | 13.00000 | 0.00000 | 0.00000 | 0.10000 | 0 | 36.00000 | 0.00000 | 1.0 | 6.00000 | 41.00000 | 3.00000 | 5.00000 | 90.00000%T | 70.00000%T | 50.00000%T | BZT_Spindel | 
 DATA | 202160_4.5_1.2379 | 02 | 1 | 01 | 1 | 202160 4.5 Stahl 1.2379 | TMC0_00101 | VHM, Coated | 37 | 37 | 37 |   |   | 4.50000 | 3 | 15.00000 | 0.00000 | 3 | 8.00000 | 0.00000 | 0.00000 | 0.10000 | 0 | 37.00000 | 0.00000 | 1.0 | 6.00000 | 39.00000 | 1.00000 | 1.00000 | 90.00000%T | 70.00000%T | 30.00000%T | BZT_Spindel | 
 DATA | 202160_4.5_Alu_kurz | 02 | 1 | 01 | 1 | 202160 4.5 Alu kurspanend | TMC0_00101 | VHM, Coated | 37 | 37 | 37 |   |   | 4.50000 | 3 | 15.00000 | 0.00000 | 3 | 8.00000 | 0.00000 | 0.00000 | 0.10000 | 0 | 37.00000 | 0.00000 | 1.0 | 6.00000 | 39.00000 | 1.00000 | 5.00000 | 90.00000%T | 70.00000%T | 30.00000%T | BZT_Spindel | 
 DATA | 202248_10_Alu_kurzspanend | 02 | 1 | 01 | 1 | 202248 10 Alu kurzspanend | TMC0_00100 | VHM, Coated | 42 | 42 | 42 |   |   | 10.00000 | 3 | 30.00000 | 0.00000 | 3 | 22.00000 | 0.00000 | 0.00000 | 0.20000 | 0 | 40.00000 | 0.00000 | 1.0 | 10.00000 | 42.00000 | 0.00000 | 5.00000 | 90.00000%T | 70.00000%T | 30.00000%T | BZT_Spindel | 
@@ -262,6 +324,8 @@ DATA | 206265_12_0.5_Alu_kurz | 02 | 1 | 01 | 1 | 206265 12_0.5_Alu_kurz |  TMC0
 DATA | Lerrox_1_Alu_kurz | 02 | 1 | 01 | 1 | Lerrox 1 Alu kurzspanend | TMC0_00002 | Carbide, Uncoated (Brazed and Solid) | 42 | 42 | 42 |   |   | 1.00000 | 2 | 6.00000 | 0.00000 | 3 | 5.00000 | 0.00000 | 0.00000 | 0.00000 | 0 | 26.00000 | 0.00000 | 1.0 | 3.10000 | 32.00000 | 5.00000 | 5.00000 | 90.00000%T | 70.00000%T | 50.00000%T | BZT_Spindel | 
 DATA | Lerrox_2_Alu_kurz | 02 | 1 | 01 | 1 | Lerrox 2 Alu kurzspanend | TMC0_00002 | Carbide, Uncoated (Brazed and Solid) | 42 | 42 | 42 |   |   | 2.00000 | 2 | 12.00000 | 0.00000 | 3 | 9.00000 | 0.00000 | 0.00000 | 0.00000 | 0 | 23.00000 | 0.00000 | 1.0 | 3.10000 | 26.00000 | 2.50000 | 5.00000 | 90.00000%T | 70.00000%T | 50.00000%T | BZT_Spindel | 
 DATA | Lerrox_3_Alu_kurz | 02 | 1 | 01 | 1 | Lerrox 3 Alu kurzspanend | TMC0_00002 | Carbide, Uncoated (Brazed and Solid) | 42 | 42 | 42 |   |   | 3.00000 | 2 | 12.00000 | 0.00000 | 3 | 10.00000 | 0.00000 | 0.00000 | 0.00000 | 0 | 22.00000 | 0.00000 | 1.0 | 3.10000 | 26.00000 | 0.10000 | 5.00000 | 90.00000%T | 70.00000%T | 50.00000%T | BZT_Spindel | 
+DATA | Och_MPE0302_2_INOX | 02 | 1 | 01 | 1 | Och_MPE0302_2_INOX | TMC0_00002 | Carbide, Uncoated (Brazed and Solid) | 42 | 42 | 42 |   |   | 2.00000 | 3 | 6.00000 | 0.00000 | 3 | 6.00000 | 0.00000 | 0.00000 | 0.00000 | 0 | 37.00000 | 0.00000 | 1.0 | 4.00000 | 45.00000 | 6.00000 | 1.00000 | 90.00000%T | 70.00000%T | 50.00000%T | BZT_Spindel | 
+DATA | Och_MPE0303_3_INOX | 02 | 1 | 01 | 1 | Och_MPE0303_3_INOX | TMC0_00002 | Carbide, Uncoated (Brazed and Solid) | 42 | 42 | 0 |   |   | 3.00000 | 3 | 8.00000 | 0.00000 | 3 | 8.00000 | 0.00000 | 0.00000 | 0.00000 | 0 | 37.00000 | 0.00000 | 1.0 | 4.00000 | 42.50000 | 3.00000 | 1.00000 | 90.00000%T | 70.00000%T | 50.00000%T | BZT_Spindel | 
 #END_DATA
 
 #
@@ -423,6 +487,7 @@ FORMAT LIBRF T ST UGT UGST DESCR MATREF MATDES TLNUM ADJREG CUTCOMREG HLD HLDDES
 #CLASS FACE_MILL_INDEXABLE
 FORMAT LIBRF T ST UGT UGST DESCR MATREF MATDES TLNUM ADJREG CUTCOMREG HLD HLDDES DIA FN HEI ZOFF DROT FLEN D2 COR1 CTH HOFF ZMOUNT RIGID TSDIA TSLEN TSTLEN RAMPANGLE HELICALDIA MINRAMPLEN MAXCUTWIDTH HLDREF TPREF
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DATA | ugt0212_001 | 02 | 12 | 01 | 05 | Face Mill 100 mm | TMC0_00003 | Carbide |   |   |   | 330 | Steep Taper SKG50 | 100. | 6 | 23.15 | 0.0 | 3 | 8. | 116. | 0.0 | 0 | 0.0 | 0.0 | 1.0 | 80.00000 | 60.00000 | 16.00000 | 15.0 | 90%T | 70%T | 50%T | HLD001_00026 |  
 #END_DATA
 
 #
@@ -560,7 +625,6 @@ FORMAT LIBRF T ST DESCR MATREF MATDES TLNUM ADJREG CUTCOMREG DIA FN HEI ZOFF DRO
 
 #CLASS UG_7_PARAMETER
 FORMAT LIBRF T ST UGT UGST DESCR MATREF MATDES TLNUM ADJREG CUTCOMREG HLD HLDDES DIA FN HEI ZOFF DROT FLEN TAPA TIPA COR1 CX1 CY1 CTH HOFF ZMOUNT RIGID TSDIA TSLEN TSTLEN RAMPANGLE HELICALDIA MINRAMPLEN MAXCUTWIDTH HLDREF TPREF
-#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #END_DATA
 
 #
@@ -702,385 +766,6 @@ FORMAT LIBRF T ST DESCR MATREF MATDES TLNUM ADJREG CUTCOMREG HLD HLDDES FN ZOFF 
 #CLASS TWIST_DRILL
 FORMAT   LIBRF         T    ST   UGT   UGST   DESCR                             MATREF       MATDES    TLNUM   ADJREG   CUTCOMREG   HLD   HLDDES              DIA     FN   HEI       ZOFF   DROT   FLEN   PNTA   PNTL   COR1   CTH   HOFF   ZMOUNT   RIGID   TSDIA   TSLEN   TSTLEN   HLDREF         TPREF   
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-DATA | ugt0301_001 | 03 | 01 | 02 | 00 | Twist Drill 32.5 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 32.5 | 2 | 218.82 | 0.0 | 3 | 185. | 118. | 9.763985 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00031 |  
-DATA | ugt0301_002 | 03 | 01 | 02 | 00 | Twist Drill 4 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 4. | 2 | 51.8 | 0.0 | 3 | 43. | 118. | 1.201721 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00002 |  
-DATA | ugt0301_003 | 03 | 01 | 02 | 00 | Twist Drill 5 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 5. | 2 | 77.45 | 0.0 | 3 | 52. | 118. | 1.502152 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00032 |  
-DATA | ugt0301_004 | 03 | 01 | 02 | 00 | Twist Drill 8 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 8. | 2 | 100.45 | 0.0 | 3 | 75. | 118. | 2.403442 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00032 |  
-DATA | ugt0301_005 | 03 | 01 | 02 | 00 | Twist Drill 12 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 12. | 2 | 126.45 | 0.0 | 3 | 101. | 118. | 3.605164 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00032 |  
-DATA | ugt0301_006 | 03 | 01 | 02 | 00 | Twist Drill 16 mm | TMC0_00001 | HSS |   |   |   | 310 | Steep Taper SKG40 | 16. | 2 | 143. | 0.0 | 3 | 120. | 118. | 4.806885 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00033 |  
-DATA | ugt0301_007 | 03 | 01 | 02 | 00 | Twist Drill 20 mm | TMC0_00001 | HSS |   |   |   | 310 | Steep Taper SKG40 | 20. | 2 | 163. | 0.0 | 3 | 140. | 118. | 6.008606 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00033 |  
-DATA | ugt0301_008 | 03 | 01 | 02 | 00 | Twist Drill 30 mm | TMC0_00001 | HSS |   |   |   | 310 | Steep Taper SKG40 | 30. | 2 | 200.97 | 0.0 | 3 | 175. | 118. | 9.012909 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00034 |  
-DATA | ugt0301_009 | 03 | 01 | 02 | 00 | Twist Drill 40 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 40. | 2 | 231.5 | 0.0 | 3 | 200. | 118. | 12.017212 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00031 |  
-DATA | ugt0301_010 | 03 | 01 | 02 | 00 | Twist Drill 50 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 50. | 2 | 253.82 | 0.0 | 3 | 220. | 118. | 15.021515 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00031 |  
-DATA | ugt0301_014 | 03 | 01 | 02 | 00 | Twist Drill 1 mm | TMC0_00001 | HSS |   |   |   | 310 | Steep Taper SKG40 | 1. | 2 | 14. | 0.0 | 3 | 12. | 118. | 0.300430 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00035 |  
-DATA | ugt0301_016 | 03 | 01 | 02 | 00 | Twist Drill 1.5 mm | TMC0_00001 | HSS |   |   |   | 310 | Steep Taper SKG40 | 1.5 | 2 | 20. | 0.0 | 3 | 18. | 118. | 0.450645 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00035 |  
-DATA | ugt0301_017 | 03 | 01 | 02 | 00 | Twist Drill 2 mm | TMC0_00001 | HSS |   |   |   | 310 | Steep Taper SKG40 | 2. | 2 | 26. | 0.0 | 3 | 24. | 118. | 0.600861 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00035 |  
-DATA | ugt0301_018 | 03 | 01 | 02 | 00 | Twist Drill 2.5 mm | TMC0_00001 | HSS |   |   |   | 310 | Steep Taper SKG40 | 2.5 | 2 | 32. | 0.0 | 3 | 30. | 118. | 0.751076 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00035 |  
-DATA | ugt0301_019 | 03 | 01 | 02 | 00 | Twist Drill 3 mm | TMC0_00001 | HSS |   |   |   | 310 | Steep Taper SKG40 | 3. | 2 | 35. | 0.0 | 3 | 33. | 118. | 0.901291 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00035 |  
-DATA | ugt0301_020 | 03 | 01 | 02 | 00 | Twist Drill 3.5 mm | TMC0_00001 | HSS |   |   |   | 310 | Steep Taper SKG40 | 3.5 | 2 | 41. | 0.0 | 3 | 39. | 118. | 1.051506 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00035 |  
-DATA | ugt0301_021 | 03 | 01 | 02 | 00 | Twist Drill 6.5 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 6.5 | 2 | 65. | 0.0 | 3 | 63. | 118. | 1.952797 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00002 |  
-DATA | ugt0301_022 | 03 | 01 | 02 | 00 | Twist Drill 4.5 mm | TMC0_00001 | HSS |   |   |   | 310 | Steep Taper SKG40 | 4.5 | 2 | 49. | 0.0 | 3 | 47. | 118. | 1.351936 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00035 |  
-DATA | ugt0301_023 | 03 | 01 | 02 | 00 | Twist Drill 5 mm | TMC0_00001 | HSS |   |   |   | 310 | Steep Taper SKG40 | 5. | 2 | 54. | 0.0 | 3 | 52. | 118. | 1.502152 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00035 |  
-DATA | ugt0301_024 | 03 | 01 | 02 | 00 | Twist Drill 5.5 mm | TMC0_00001 | HSS |   |   |   | 310 | Steep Taper SKG40 | 5.5 | 2 | 59. | 0.0 | 3 | 57. | 118. | 1.652367 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00035 |  
-DATA | ugt0301_025 | 03 | 01 | 02 | 00 | Twist Drill 6 mm | TMC0_00001 | HSS |   |   |   | 310 | Steep Taper SKG40 | 6. | 2 | 59. | 0.0 | 3 | 57. | 118. | 1.802582 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00035 |  
-DATA | ugt0301_026 | 03 | 01 | 02 | 00 | Twist Drill 7.5 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 7.5 | 2 | 71. | 0.0 | 3 | 69. | 118. | 2.253227 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00002 |  
-DATA | ugt0301_027 | 03 | 01 | 02 | 00 | Twist Drill 7 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 7. | 2 | 71. | 0.0 | 3 | 69. | 118. | 2.103012 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00002 |  
-DATA | ugt0301_028 | 03 | 01 | 02 | 00 | Twist Drill 8 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 8. | 2 | 78. | 0.0 | 3 | 76. | 118. | 2.403442 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00002 |  
-DATA | ugt0301_029 | 03 | 01 | 02 | 00 | Twist Drill 8.5 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 8.5 | 2 | 77. | 0.0 | 3 | 75. | 118. | 2.553658 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00002 |  
-DATA | ugt0301_030 | 03 | 01 | 02 | 00 | Twist Drill 9 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 9. | 2 | 83. | 0.0 | 3 | 81. | 118. | 2.703873 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00002 |  
-DATA | ugt0301_031 | 03 | 01 | 02 | 00 | Twist Drill 9.5 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 9.5 | 2 | 83. | 0.0 | 3 | 81. | 118. | 2.854088 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00002 |  
-DATA | ugt0301_032 | 03 | 01 | 02 | 00 | Twist Drill 10 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 10. | 2 | 89. | 0.0 | 3 | 87. | 118. | 3.004303 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00002 |  
-DATA | ugt0301_033 | 03 | 01 | 02 | 00 | Twist Drill 10.5 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 10.5 | 2 | 89. | 0.0 | 3 | 87. | 118. | 3.154518 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00002 |  
-DATA | ugt0301_034 | 03 | 01 | 02 | 00 | Twist Drill 11 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 11. | 2 | 96. | 0.0 | 3 | 94. | 118. | 3.304733 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00002 |  
-DATA | ugt0301_035 | 03 | 01 | 02 | 00 | Twist Drill 11.5 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 11.5 | 2 | 96. | 0.0 | 3 | 94. | 118. | 3.454949 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00002 |  
-DATA | ugt0301_036 | 03 | 01 | 02 | 00 | Twist Drill 12.5 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 12.5 | 2 | 120. | 0.0 | 3 | 101. | 118. | 3.755379 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00036 |  
-DATA | ugt0301_037 | 03 | 01 | 02 | 00 | Twist Drill 13 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 13. | 2 | 120. | 0.0 | 3 | 101. | 118. | 3.905594 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00036 |  
-DATA | ugt0301_038 | 03 | 01 | 02 | 00 | Twist Drill 13.5 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 13.5 | 2 | 127. | 0.0 | 3 | 108. | 118. | 4.055809 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00036 |  
-DATA | ugt0301_039 | 03 | 01 | 02 | 00 | Twist Drill 14 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 14. | 2 | 127. | 0.0 | 3 | 108. | 118. | 4.206024 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00036 |  
-DATA | ugt0301_040 | 03 | 01 | 02 | 00 | Twist Drill 14.5 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 14.5 | 2 | 137. | 0.0 | 3 | 114. | 118. | 4.356239 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00037 |  
-DATA | ugt0301_041 | 03 | 01 | 02 | 00 | Twist Drill 15 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 15. | 2 | 137. | 0.0 | 3 | 114. | 118. | 4.506455 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00037 |  
-DATA | ugt0301_042 | 03 | 01 | 02 | 00 | Twist Drill 15.5 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 15.5 | 2 | 143. | 0.0 | 3 | 120. | 118. | 4.656670 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00037 |  
-DATA | ugt0301_043 | 03 | 01 | 02 | 00 | Twist Drill 16.5 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 16.5 | 2 | 148. | 0.0 | 3 | 125. | 118. | 4.957100 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00037 |  
-DATA | ugt0301_044 | 03 | 01 | 02 | 00 | Twist Drill 17 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 17. | 2 | 148. | 0.0 | 3 | 125. | 118. | 5.107315 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00037 |  
-DATA | ugt0301_045 | 03 | 01 | 02 | 00 | Twist Drill 17.5 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 17.5 | 2 | 153. | 0.0 | 3 | 130. | 118. | 5.257530 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00037 |  
-DATA | ugt0301_046 | 03 | 01 | 02 | 00 | Twist Drill 18 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 18. | 2 | 153. | 0.0 | 3 | 130. | 118. | 5.407746 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00037 |  
-DATA | ugt0301_047 | 03 | 01 | 02 | 00 | Twist Drill 18.5 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 18.5 | 2 | 158. | 0.0 | 3 | 135. | 118. | 5.557961 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00037 |  
-DATA | ugt0301_048 | 03 | 01 | 02 | 00 | Twist Drill 19 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 19. | 2 | 158. | 0.0 | 3 | 135. | 118. | 5.708176 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00037 |  
-DATA | ugt0301_049 | 03 | 01 | 02 | 00 | Twist Drill 19.5 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 19.5 | 2 | 163. | 0.0 | 3 | 140. | 118. | 5.858391 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00037 |  
-DATA | ugt0301_050 | 03 | 01 | 02 | 00 | Twist Drill 20.5 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 20.5 | 2 | 168. | 0.0 | 3 | 145. | 118. | 6.158821 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00037 |  
-DATA | ugt0301_051 | 03 | 01 | 02 | 00 | Twist Drill 21 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 21. | 2 | 168. | 0.0 | 3 | 145. | 118. | 6.309036 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00037 |  
-DATA | ugt0301_052 | 03 | 01 | 02 | 00 | Twist Drill 21.5 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 21.5 | 2 | 173. | 0.0 | 3 | 150. | 118. | 6.459252 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00037 |  
-DATA | ugt0301_053 | 03 | 01 | 02 | 00 | Twist Drill 22 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 22. | 2 | 173. | 0.0 | 3 | 150. | 118. | 6.609467 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00037 |  
-DATA | ugt0301_054 | 03 | 01 | 02 | 00 | Twist Drill 22.5 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 22.5 | 2 | 178. | 0.0 | 3 | 155. | 118. | 6.759682 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00037 |  
-DATA | ugt0301_055 | 03 | 01 | 02 | 00 | Twist Drill 23 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 23. | 2 | 178. | 0.0 | 3 | 155. | 118. | 6.909897 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00037 |  
-DATA | ugt0301_056 | 03 | 01 | 02 | 00 | Twist Drill 23.5 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 23.5 | 2 | 182. | 0.0 | 3 | 155. | 118. | 7.060112 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00038 |  
-DATA | ugt0301_057 | 03 | 01 | 02 | 00 | Twist Drill 24 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 24. | 2 | 187. | 0.0 | 3 | 160. | 118. | 7.210327 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00038 |  
-DATA | ugt0301_058 | 03 | 01 | 02 | 00 | Twist Drill 24.5 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 24.5 | 2 | 187. | 0.0 | 3 | 160. | 118. | 7.360543 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00038 |  
-DATA | ugt0301_059 | 03 | 01 | 02 | 00 | Twist Drill 25 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 25. | 2 | 187. | 0.0 | 3 | 160. | 118. | 7.510758 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00038 |  
-DATA | ugt0301_128 | 03 | 01 | 02 | 00 | Twist Drill 9.8 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 9.8 | 2 | 103.05 | 0.0 | 3 | 87. | 118. | 2.944217 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00032 |  
-DATA | ugt0301_129 | 03 | 01 | 02 | 00 | Twist Drill 12.5 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 12.5 | 2 | 116.25 | 0.0 | 3 | 101. | 118. | 3.755379 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00032 |  
-DATA | ugt0301_130 | 03 | 01 | 02 | 00 | Twist Drill 25.75 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 25.75 | 2 | 184.26 | 0.0 | 3 | 165. | 118. | 7.736080 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00039 |  
-DATA | ugt0301_131 | 03 | 01 | 02 | 00 | Twist Drill 26.75 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 26.75 | 2 | 183.96 | 0.0 | 3 | 165. | 118. | 8.036511 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00039 |  
-DATA | ugt0301_132 | 03 | 01 | 02 | 00 | Twist Drill 27.75 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 27.75 | 2 | 188.66 | 0.0 | 3 | 170. | 118. | 8.336941 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00039 |  
-DATA | ugt0301_133 | 03 | 01 | 02 | 00 | Twist Drill 28.75 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 28.75 | 2 | 193.363 | 0.0 | 3 | 175. | 118. | 8.637371 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00039 |  
-DATA | ugt0301_134 | 03 | 01 | 02 | 00 | Twist Drill 29.75 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 29.75 | 2 | 193.06 | 0.0 | 3 | 175. | 118. | 8.937802 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00039 |  
-DATA | ugt0301_135 | 03 | 01 | 02 | 00 | Twist Drill 0.2 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | .2 | 2 | 10.94 | 0.0 | 3 | 2.5 | 118. | 0.060086 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00040 |  
-DATA | ugt0301_136 | 03 | 01 | 02 | 00 | Twist Drill 0.3 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | .3 | 2 | 8.9 | 0.0 | 3 | 3. | 118. | 0.090129 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00040 |  
-DATA | ugt0301_137 | 03 | 01 | 02 | 00 | Twist Drill 0.4 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | .4 | 2 | 12.58 | 0.0 | 3 | 5. | 118. | 0.120172 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00040 |  
-DATA | ugt0301_138 | 03 | 01 | 02 | 00 | Twist Drill 0.5 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | .5 | 2 | 11.849 | 0.0 | 3 | 6. | 118. | 0.150215 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00040 |  
-DATA | ugt0301_139 | 03 | 01 | 02 | 00 | Twist Drill 0.6 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | .6 | 2 | 13.819 | 0.0 | 3 | 7. | 118. | 0.180258 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00040 |  
-DATA | ugt0301_140 | 03 | 01 | 02 | 00 | Twist Drill 0.7 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | .7 | 2 | 17.78 | 0.0 | 3 | 9. | 118. | 0.210301 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00040 |  
-DATA | ugt0301_141 | 03 | 01 | 02 | 00 | Twist Drill 0.8 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | .8 | 2 | 19.759 | 0.0 | 3 | 10. | 118. | 0.240344 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00040 |  
-DATA | ugt0301_142 | 03 | 01 | 02 | 00 | Twist Drill 0.9 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | .9 | 2 | 21.729 | 0.0 | 3 | 11. | 118. | 0.270387 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00040 |  
-DATA | ugt0301_143 | 03 | 01 | 02 | 00 | Twist Drill 1.1 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 1.1 | 2 | 13.669 | 0.0 | 3 | 13. | 118. | 0.330473 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_144 | 03 | 01 | 02 | 00 | Twist Drill 1.2 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 1.2 | 2 | 15.639 | 0.0 | 3 | 15. | 118. | 0.360516 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_145 | 03 | 01 | 02 | 00 | Twist Drill 1.3 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 1.3 | 2 | 15.609 | 0.0 | 3 | 15. | 118. | 0.390559 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_146 | 03 | 01 | 02 | 00 | Twist Drill 1.4 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 1.4 | 2 | 17.579 | 0.0 | 3 | 17. | 118. | 0.420602 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_147 | 03 | 01 | 02 | 00 | Twist Drill 1.6 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 1.6 | 2 | 19.519 | 0.0 | 3 | 19. | 118. | 0.480688 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_148 | 03 | 01 | 02 | 00 | Twist Drill 1.7 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 1.7 | 2 | 19.489 | 0.0 | 3 | 19. | 118. | 0.510732 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_149 | 03 | 01 | 02 | 00 | Twist Drill 1.8 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 1.8 | 2 | 22.576 | 0.0 | 3 | 22. | 118. | 0.540775 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_150 | 03 | 01 | 02 | 00 | Twist Drill 1.9 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 1.9 | 2 | 22.548 | 0.0 | 3 | 22. | 118. | 0.570818 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_151 | 03 | 01 | 02 | 00 | Twist Drill 2.1 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 2.1 | 2 | 24.399 | 0.0 | 3 | 24. | 118. | 0.630904 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_152 | 03 | 01 | 02 | 00 | Twist Drill 2.2 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 2.2 | 2 | 26.33 | 0.0 | 3 | 26. | 118. | 0.660947 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_153 | 03 | 01 | 02 | 00 | Twist Drill 2.3 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 2.3 | 2 | 26.3 | 0.0 | 3 | 26. | 118. | 0.690990 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_154 | 03 | 01 | 02 | 00 | Twist Drill 2.4 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 2.4 | 2 | 29.278 | 0.0 | 3 | 29. | 118. | 0.721033 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_155 | 03 | 01 | 02 | 00 | Twist Drill 2.6 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 2.6 | 2 | 30.049 | 0.0 | 3 | 30. | 118. | 0.781119 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_156 | 03 | 01 | 02 | 00 | Twist Drill 2.7 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 2.7 | 2 | 32.32 | 0.0 | 3 | 32. | 118. | 0.811162 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_157 | 03 | 01 | 02 | 00 | Twist Drill 2.8 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 2.8 | 2 | 32.914 | 0.0 | 3 | 32. | 118. | 0.841205 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_158 | 03 | 01 | 02 | 00 | Twist Drill 2.9 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 2.9 | 2 | 32.128 | 0.0 | 3 | 32. | 118. | 0.871248 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_159 | 03 | 01 | 02 | 00 | Twist Drill 3.1 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 3.1 | 2 | 35.068 | 0.0 | 3 | 35. | 118. | 0.931334 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_160 | 03 | 01 | 02 | 00 | Twist Drill 3.2 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 3.2 | 2 | 35.038 | 0.0 | 3 | 35. | 118. | 0.961377 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_161 | 03 | 01 | 02 | 00 | Twist Drill 3.3 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 3.3 | 2 | 35.008 | 0.0 | 3 | 35. | 118. | 0.991420 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_162 | 03 | 01 | 02 | 00 | Twist Drill 3.4 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 3.4 | 2 | 37.978 | 0.0 | 3 | 37. | 118. | 1.021463 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_163 | 03 | 01 | 02 | 00 | Twist Drill 3.6 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 3.6 | 2 | 37.918 | 0.0 | 3 | 37. | 118. | 1.081549 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_164 | 03 | 01 | 02 | 00 | Twist Drill 3.7 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 3.7 | 2 | 37.888 | 0.0 | 3 | 37. | 118. | 1.111592 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_165 | 03 | 01 | 02 | 00 | Twist Drill 3.8 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 3.8 | 2 | 41.858 | 0.0 | 3 | 41. | 118. | 1.141635 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_166 | 03 | 01 | 02 | 00 | Twist Drill 3.9 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 3.9 | 2 | 42.412 | 0.0 | 3 | 42. | 118. | 1.171678 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_167 | 03 | 01 | 02 | 00 | Twist Drill 4.1 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 4.1 | 2 | 41.768 | 0.0 | 3 | 41. | 118. | 1.231764 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_168 | 03 | 01 | 02 | 00 | Twist Drill 4.2 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 4.2 | 2 | 41.738 | 0.0 | 3 | 41. | 118. | 1.261807 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_169 | 03 | 01 | 02 | 00 | Twist Drill 4.3 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 4.3 | 2 | 45.708 | 0.0 | 3 | 45. | 118. | 1.291850 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_170 | 03 | 01 | 02 | 00 | Twist Drill 4.4 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 4.4 | 2 | 45.678 | 0.0 | 3 | 45. | 118. | 1.321893 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_171 | 03 | 01 | 02 | 00 | Twist Drill 4.6 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 4.6 | 2 | 48.598 | 0.0 | 3 | 47. | 118. | 1.381979 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_172 | 03 | 01 | 02 | 00 | Twist Drill 4.7 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 4.7 | 2 | 45.587 | 0.0 | 3 | 45. | 118. | 1.412022 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_173 | 03 | 01 | 02 | 00 | Twist Drill 4.8 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 4.8 | 2 | 53.262 | 0.0 | 3 | 52. | 118. | 1.442065 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_174 | 03 | 01 | 02 | 00 | Twist Drill 4.9 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 4.9 | 2 | 50.527 | 0.0 | 3 | 50. | 118. | 1.472109 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_175 | 03 | 01 | 02 | 00 | Twist Drill 5.1 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 5.1 | 2 | 50.467 | 0.0 | 3 | 50. | 118. | 1.532195 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_176 | 03 | 01 | 02 | 00 | Twist Drill 5.2 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 5.2 | 2 | 50.437 | 0.0 | 3 | 50. | 118. | 1.562238 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_177 | 03 | 01 | 02 | 00 | Twist Drill 5.3 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 5.3 | 2 | 50.407 | 0.0 | 3 | 50. | 118. | 1.592281 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_178 | 03 | 01 | 02 | 00 | Twist Drill 5.4 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 5.4 | 2 | 55.377 | 0.0 | 3 | 55. | 118. | 1.622324 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_179 | 03 | 01 | 02 | 00 | Twist Drill 5.6 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 5.6 | 2 | 55.317 | 0.0 | 3 | 55. | 118. | 1.682410 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_180 | 03 | 01 | 02 | 00 | Twist Drill 5.7 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 5.7 | 2 | 55.73 | 0.0 | 3 | 55. | 118. | 1.712453 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_181 | 03 | 01 | 02 | 00 | Twist Drill 5.8 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 5.8 | 2 | 55.257 | 0.0 | 3 | 55. | 118. | 1.742496 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_182 | 03 | 01 | 02 | 00 | Twist Drill 5.9 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 5.9 | 2 | 55.671 | 0.0 | 3 | 55. | 118. | 1.772539 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_183 | 03 | 01 | 02 | 00 | Twist Drill 6.1 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 6.1 | 2 | 61.568 | 0.0 | 3 | 61. | 118. | 1.832625 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_184 | 03 | 01 | 02 | 00 | Twist Drill 6.2 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 6.2 | 2 | 61.137 | 0.0 | 3 | 61. | 118. | 1.862668 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_185 | 03 | 01 | 02 | 00 | Twist Drill 6.3 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 6.3 | 2 | 61.508 | 0.0 | 3 | 61. | 118. | 1.892711 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_186 | 03 | 01 | 02 | 00 | Twist Drill 6.4 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 6.4 | 2 | 61.478 | 0.0 | 3 | 61. | 118. | 1.922754 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_187 | 03 | 01 | 02 | 00 | Twist Drill 6.6 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 6.6 | 2 | 61.017 | 0.0 | 3 | 61. | 118. | 1.982840 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_188 | 03 | 01 | 02 | 00 | Twist Drill 6.7 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 6.7 | 2 | 61.3 | 0.0 | 3 | 61. | 118. | 2.012883 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_189 | 03 | 01 | 02 | 00 | Twist Drill 6.8 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 6.8 | 2 | 66.957 | 0.0 | 3 | 66. | 118. | 2.042926 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_190 | 03 | 01 | 02 | 00 | Twist Drill 6.9 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 6.9 | 2 | 66.927 | 0.0 | 3 | 66. | 118. | 2.072969 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_191 | 03 | 01 | 02 | 00 | Twist Drill 7.1 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 7.1 | 2 | 66.866 | 0.0 | 3 | 66. | 118. | 2.133055 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00004 |  
-DATA | ugt0301_192 | 03 | 01 | 02 | 00 | Twist Drill 7.2 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 7.2 | 2 | 66.836 | 0.0 | 3 | 66. | 118. | 2.163098 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00004 |  
-DATA | ugt0301_193 | 03 | 01 | 02 | 00 | Twist Drill 7.3 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 7.3 | 2 | 66.806 | 0.0 | 3 | 66. | 118. | 2.193141 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00004 |  
-DATA | ugt0301_194 | 03 | 01 | 02 | 00 | Twist Drill 7.4 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 7.4 | 2 | 66.77 | 0.0 | 3 | 66. | 118. | 2.223184 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00004 |  
-DATA | ugt0301_195 | 03 | 01 | 02 | 00 | Twist Drill 7.6 mm | TMC0_00001 | HSS |   |   |   | 310 | Steep Taper SKG40 | 7.6 | 2 | 73.71 | 0.0 | 3 | 73. | 118. | 2.283270 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00022 |  
-DATA | ugt0301_196 | 03 | 01 | 02 | 00 | Twist Drill 7.7 mm | TMC0_00001 | HSS |   |   |   | 310 | Steep Taper SKG40 | 7.7 | 2 | 73.68 | 0.0 | 3 | 73. | 118. | 2.313313 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00022 |  
-DATA | ugt0301_197 | 03 | 01 | 02 | 00 | Twist Drill 7.8 mm | TMC0_00001 | HSS |   |   |   | 310 | Steep Taper SKG40 | 7.8 | 2 | 73.65 | 0.0 | 3 | 73. | 118. | 2.343356 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00022 |  
-DATA | ugt0301_198 | 03 | 01 | 02 | 00 | Twist Drill 7.9 mm | TMC0_00001 | HSS |   |   |   | 310 | Steep Taper SKG40 | 7.9 | 2 | 73.62 | 0.0 | 3 | 73. | 118. | 2.373399 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00022 |  
-DATA | ugt0301_199 | 03 | 01 | 02 | 00 | Twist Drill 8.2 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 8.2 | 2 | 72.53 | 0.0 | 3 | 72. | 118. | 2.463529 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00042 |  
-DATA | ugt0301_200 | 03 | 01 | 02 | 00 | Twist Drill 8.3 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 8.3 | 2 | 72.506 | 0.0 | 3 | 72. | 118. | 2.493572 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00042 |  
-DATA | ugt0301_201 | 03 | 01 | 02 | 00 | Twist Drill 8.4 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 8.4 | 2 | 72.47 | 0.0 | 3 | 72. | 118. | 2.523615 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00042 |  
-DATA | ugt0301_202 | 03 | 01 | 02 | 00 | Twist Drill 8.6 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 8.6 | 2 | 80.186 | 0.0 | 3 | 80. | 118. | 2.583701 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_203 | 03 | 01 | 02 | 00 | Twist Drill 8.7 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 8.7 | 2 | 80.157 | 0.0 | 3 | 80. | 118. | 2.613744 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_204 | 03 | 01 | 02 | 00 | Twist Drill 8.8 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 8.8 | 2 | 80.128 | 0.0 | 3 | 80. | 118. | 2.643787 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_205 | 03 | 01 | 02 | 00 | Twist Drill 8.9 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 8.9 | 2 | 78.326 | 0.0 | 3 | 78. | 118. | 2.673830 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_206 | 03 | 01 | 02 | 00 | Twist Drill 9.1 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 9.1 | 2 | 78.266 | 0.0 | 3 | 78. | 118. | 2.733916 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_207 | 03 | 01 | 02 | 00 | Twist Drill 9.2 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 9.2 | 2 | 80.01 | 0.0 | 3 | 80. | 118. | 2.763959 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_208 | 03 | 01 | 02 | 00 | Twist Drill 9.3 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 9.3 | 2 | 78.205 | 0.0 | 3 | 78. | 118. | 2.794002 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_209 | 03 | 01 | 02 | 00 | Twist Drill 9.4 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 9.4 | 2 | 78.175 | 0.0 | 3 | 78. | 118. | 2.824045 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_210 | 03 | 01 | 02 | 00 | Twist Drill 9.6 mm | TMC0_00001 | HSS |   |   |   | 310 | Steep Taper SKG40 | 9.6 | 2 | 84.115 | 0.0 | 3 | 84. | 118. | 2.884131 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00002 |  
-DATA | ugt0301_211 | 03 | 01 | 02 | 00 | Twist Drill 9.7 mm | TMC0_00001 | HSS |   |   |   | 310 | Steep Taper SKG40 | 9.7 | 2 | 88.643 | 0.0 | 3 | 87. | 118. | 2.914174 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00002 |  
-DATA | ugt0301_212 | 03 | 01 | 02 | 00 | Twist Drill 9.8 mm | TMC0_00001 | HSS |   |   |   | 310 | Steep Taper SKG40 | 9.8 | 2 | 84. | 0.0 | 3 | 83. | 118. | 2.944217 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00002 |  
-DATA | ugt0301_213 | 03 | 01 | 02 | 00 | Twist Drill 9.9 mm | TMC0_00001 | HSS |   |   |   | 310 | Steep Taper SKG40 | 9.9 | 2 | 88.586 | 0.0 | 3 | 87. | 118. | 2.974260 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00002 |  
-DATA | ugt0301_214 | 03 | 01 | 02 | 00 | Twist Drill 10.1 mm | TMC0_00001 | HSS |   |   |   | 310 | Steep Taper SKG40 | 10.1 | 2 | 83.965 | 0.0 | 3 | 82. | 118. | 3.034346 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00002 |  
-DATA | ugt0301_215 | 03 | 01 | 02 | 00 | Twist Drill 10.2 mm | TMC0_00001 | HSS |   |   |   | 310 | Steep Taper SKG40 | 10.2 | 2 | 83.935 | 0.0 | 3 | 82. | 118. | 3.064389 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00002 |  
-DATA | ugt0301_216 | 03 | 01 | 02 | 00 | Twist Drill 10.3 mm | TMC0_00001 | HSS |   |   |   | 310 | Steep Taper SKG40 | 10.3 | 2 | 83.905 | 0.0 | 3 | 82. | 118. | 3.094432 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00002 |  
-DATA | ugt0301_217 | 03 | 01 | 02 | 00 | Twist Drill 10.4 mm | TMC0_00001 | HSS |   |   |   | 310 | Steep Taper SKG40 | 10.4 | 2 | 83.875 | 0.0 | 3 | 82. | 118. | 3.124475 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00002 |  
-DATA | ugt0301_218 | 03 | 01 | 02 | 00 | Twist Drill 10.6 mm | TMC0_00001 | HSS |   |   |   |   |   | 10.6 | 2 | 86.05 | 0.0 | 3 | 86. | 118. | 3.184561 | 0.0 | 0 |   | 0.0 | 1.0 |   |   |   |   |  
-DATA | ugt0301_219 | 03 | 01 | 02 | 00 | Twist Drill 10.7 mm | TMC0_00001 | HSS |   |   |   |   |   | 10.7 | 2 | 90.785 | 0.0 | 3 | 90. | 118. | 3.214604 | 0.0 | 0 |   | 0.0 | 1.0 |   |   |   |   |  
-DATA | ugt0301_220 | 03 | 01 | 02 | 00 | Twist Drill 10.8 mm | TMC0_00001 | HSS |   |   |   |   |   | 10.8 | 2 | 92.823 | 0.0 | 3 | 92. | 118. | 3.244647 | 0.0 | 0 |   | 0.0 | 1.0 |   |   |   |   |  
-DATA | ugt0301_221 | 03 | 01 | 02 | 00 | Twist Drill 10.9 mm | TMC0_00001 | HSS |   |   |   |   |   | 10.9 | 2 | 92.794 | 0.0 | 3 | 92. | 118. | 3.274690 | 0.0 | 0 |   | 0.0 | 1.0 |   |   |   |   |  
-DATA | ugt0301_222 | 03 | 01 | 02 | 00 | Twist Drill 11.1 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 11.1 | 2 | 92.2 | 0.0 | 3 | 92. | 118. | 3.334776 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_223 | 03 | 01 | 02 | 00 | Twist Drill 11.2 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 11.2 | 2 | 90.635 | 0.0 | 3 | 90. | 118. | 3.364819 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_224 | 03 | 01 | 02 | 00 | Twist Drill 11.3 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 11.3 | 2 | 95.482 | 0.0 | 3 | 94. | 118. | 3.394862 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_225 | 03 | 01 | 02 | 00 | Twist Drill 11.4 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 11.4 | 2 | 92.112 | 0.0 | 3 | 92. | 118. | 3.424906 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_226 | 03 | 01 | 02 | 00 | Twist Drill 11.6 mm | TMC0_00001 | HSS |   |   |   | 310 | Steep Taper SKG40 | 11.6 | 2 | 90.515 | 0.0 | 3 | 90. | 118. | 3.484992 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00022 |  
-DATA | ugt0301_227 | 03 | 01 | 02 | 00 | Twist Drill 11.7 mm | TMC0_00001 | HSS |   |   |   | 310 | Steep Taper SKG40 | 11.7 | 2 | 90.484 | 0.0 | 3 | 90. | 118. | 3.515035 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00022 |  
-DATA | ugt0301_228 | 03 | 01 | 02 | 00 | Twist Drill 11.8 mm | TMC0_00001 | HSS |   |   |   | 310 | Steep Taper SKG40 | 11.8 | 2 | 93.428 | 0.0 | 3 | 93. | 118. | 3.545078 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00022 |  
-DATA | ugt0301_229 | 03 | 01 | 02 | 00 | Twist Drill 11.9 mm | TMC0_00001 | HSS |   |   |   | 310 | Steep Taper SKG40 | 11.9 | 2 | 100.191 | 0.0 | 3 | 100. | 118. | 3.575121 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00022 |  
-DATA | ugt0301_230 | 03 | 01 | 02 | 00 | Twist Drill 12.1 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 12.1 | 2 | 98.79 | 0.0 | 3 | 98. | 118. | 3.635207 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_231 | 03 | 01 | 02 | 00 | Twist Drill 12.2 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 12.2 | 2 | 97.334 | 0.0 | 3 | 97. | 118. | 3.665250 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_232 | 03 | 01 | 02 | 00 | Twist Drill 12.3 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 12.3 | 2 | 97.304 | 0.0 | 3 | 97. | 118. | 3.695293 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_233 | 03 | 01 | 02 | 00 | Twist Drill 12.4 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 12.4 | 2 | 98.707 | 0.0 | 3 | 98. | 118. | 3.725336 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_234 | 03 | 01 | 02 | 00 | Twist Drill 12.6 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 12.6 | 2 | 97.214 | 0.0 | 3 | 97. | 118. | 3.785422 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00004 |  
-DATA | ugt0301_235 | 03 | 01 | 02 | 00 | Twist Drill 12.7 mm | TMC0_00001 | HSS |   |   |   |   |   | 12.7 | 2 | 98.137 | 0.0 | 3 | 98. | 118. | 3.815465 | 0.0 | 0 |   | 0.0 | 1.0 |   |   |   |   |  
-DATA | ugt0301_236 | 03 | 01 | 02 | 00 | Twist Drill 12.8 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 12.8 | 2 | 99.928 | 0.0 | 3 | 99. | 118. | 3.845508 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00004 |  
-DATA | ugt0301_237 | 03 | 01 | 02 | 00 | Twist Drill 12.9 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 12.9 | 2 | 97.124 | 0.0 | 3 | 97. | 118. | 3.875551 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00004 |  
-DATA | ugt0301_238 | 03 | 01 | 02 | 00 | Twist Drill 15.6 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 15.6 | 2 | 123.313 | 0.0 | 3 | 120. | 118. | 4.686713 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_239 | 03 | 01 | 02 | 00 | Twist Drill 15.7 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 15.7 | 2 | 124.416 | 0.0 | 3 | 120. | 118. | 4.716756 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_240 | 03 | 01 | 02 | 00 | Twist Drill 15.8 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 15.8 | 2 | 123.253 | 0.0 | 3 | 120. | 118. | 4.746799 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_241 | 03 | 01 | 02 | 00 | Twist Drill 15.9 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 15.9 | 2 | 124.357 | 0.0 | 3 | 120. | 118. | 4.776842 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_242 | 03 | 01 | 02 | 00 | Twist Drill 17.1 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 17.1 | 2 | 147.86 | 0.0 | 3 | 130. | 118. | 5.137358 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00043 |  
-DATA | ugt0301_243 | 03 | 01 | 02 | 00 | Twist Drill 17.2 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 17.2 | 2 | 147.83 | 0.0 | 3 | 130. | 118. | 5.167401 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00043 |  
-DATA | ugt0301_244 | 03 | 01 | 02 | 00 | Twist Drill 17.3 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 17.3 | 2 | 147.8 | 0.0 | 3 | 130. | 118. | 5.197444 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00043 |  
-DATA | ugt0301_245 | 03 | 01 | 02 | 00 | Twist Drill 17.4 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 17.4 | 2 | 147.77 | 0.0 | 3 | 130. | 118. | 5.227487 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00043 |  
-DATA | ugt0301_246 | 03 | 01 | 02 | 00 | Twist Drill 17.6 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 17.6 | 2 | 147.712 | 0.0 | 3 | 130. | 118. | 5.287573 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00043 |  
-DATA | ugt0301_247 | 03 | 01 | 02 | 00 | Twist Drill 17.7 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 17.7 | 2 | 147.68 | 0.0 | 3 | 130. | 118. | 5.317616 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00043 |  
-DATA | ugt0301_248 | 03 | 01 | 02 | 00 | Twist Drill 17.8 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 17.8 | 2 | 147.65 | 0.0 | 3 | 130. | 118. | 5.347660 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00043 |  
-DATA | ugt0301_249 | 03 | 01 | 02 | 00 | Twist Drill 17.9 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 17.9 | 2 | 147.622 | 0.0 | 3 | 130. | 118. | 5.377703 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00043 |  
-DATA | ugt0301_250 | 03 | 01 | 02 | 00 | Twist Drill 18.1 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 18.1 | 2 | 152.562 | 0.0 | 3 | 135. | 118. | 5.437789 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00043 |  
-DATA | ugt0301_251 | 03 | 01 | 02 | 00 | Twist Drill 18.2 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 18.2 | 2 | 152.523 | 0.0 | 3 | 135. | 118. | 5.467832 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00043 |  
-DATA | ugt0301_252 | 03 | 01 | 02 | 00 | Twist Drill 18.3 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 18.3 | 2 | 152.502 | 0.0 | 3 | 135. | 118. | 5.497875 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00043 |  
-DATA | ugt0301_253 | 03 | 01 | 02 | 00 | Twist Drill 18.4 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 18.4 | 2 | 152.472 | 0.0 | 3 | 135. | 118. | 5.527918 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00043 |  
-DATA | ugt0301_254 | 03 | 01 | 02 | 00 | Twist Drill 18.6 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 18.6 | 2 | 152.411 | 0.0 | 3 | 135. | 118. | 5.588004 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00043 |  
-DATA | ugt0301_255 | 03 | 01 | 02 | 00 | Twist Drill 18.7 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 18.7 | 2 | 152.381 | 0.0 | 3 | 135. | 118. | 5.618047 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00043 |  
-DATA | ugt0301_256 | 03 | 01 | 02 | 00 | Twist Drill 18.8 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 18.8 | 2 | 152.351 | 0.0 | 3 | 135. | 118. | 5.648090 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00043 |  
-DATA | ugt0301_257 | 03 | 01 | 02 | 00 | Twist Drill 18.9 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 18.9 | 2 | 152.321 | 0.0 | 3 | 135. | 118. | 5.678133 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00043 |  
-DATA | ugt0301_258 | 03 | 01 | 02 | 00 | Twist Drill 19.1 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 19.1 | 2 | 157.261 | 0.0 | 3 | 140. | 118. | 5.738219 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00043 |  
-DATA | ugt0301_259 | 03 | 01 | 02 | 00 | Twist Drill 19.2 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 19.2 | 2 | 157.231 | 0.0 | 3 | 140. | 118. | 5.768262 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00043 |  
-DATA | ugt0301_260 | 03 | 01 | 02 | 00 | Twist Drill 19.3 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 19.3 | 2 | 157.201 | 0.0 | 3 | 140. | 118. | 5.798305 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00043 |  
-DATA | ugt0301_261 | 03 | 01 | 02 | 00 | Twist Drill 19.4 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 19.4 | 2 | 157.171 | 0.0 | 3 | 140. | 118. | 5.828348 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00043 |  
-DATA | ugt0301_262 | 03 | 01 | 02 | 00 | Twist Drill 19.6 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 19.6 | 2 | 157.111 | 0.0 | 3 | 140. | 118. | 5.888434 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00043 |  
-DATA | ugt0301_263 | 03 | 01 | 02 | 00 | Twist Drill 19.7 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 19.7 | 2 | 157.018 | 0.0 | 3 | 140. | 118. | 5.918477 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00043 |  
-DATA | ugt0301_264 | 03 | 01 | 02 | 00 | Twist Drill 19.8 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 19.8 | 2 | 157.051 | 0.0 | 3 | 140. | 118. | 5.948520 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00043 |  
-DATA | ugt0301_265 | 03 | 01 | 02 | 00 | Twist Drill 19.9 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 19.9 | 2 | 157.021 | 0.0 | 3 | 140. | 118. | 5.978563 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00043 |  
-DATA | ugt0301_266 | 03 | 01 | 02 | 00 | Twist Drill 13.1 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 13.1 | 2 | 116.064 | 0.0 | 3 | 101. | 118. | 3.935637 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00032 |  
-DATA | ugt0301_267 | 03 | 01 | 02 | 00 | Twist Drill 13.3 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 13.3 | 2 | 123. | 0.0 | 3 | 108. | 118. | 3.995723 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00032 |  
-DATA | ugt0301_268 | 03 | 01 | 02 | 00 | Twist Drill 13.4 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 13.4 | 2 | 122.97 | 0.0 | 3 | 108. | 118. | 4.025766 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00032 |  
-DATA | ugt0301_269 | 03 | 01 | 02 | 00 | Twist Drill 13.6 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 13.6 | 2 | 122.914 | 0.0 | 3 | 108. | 118. | 4.085852 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00032 |  
-DATA | ugt0301_270 | 03 | 01 | 02 | 00 | Twist Drill 13.7 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 13.7 | 2 | 122.884 | 0.0 | 3 | 108. | 118. | 4.115895 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00032 |  
-DATA | ugt0301_271 | 03 | 01 | 02 | 00 | Twist Drill 13.8 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 13.8 | 2 | 122.854 | 0.0 | 3 | 108. | 118. | 4.145938 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00032 |  
-DATA | ugt0301_272 | 03 | 01 | 02 | 00 | Twist Drill 13.9 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 13.9 | 2 | 122.824 | 0.0 | 3 | 108. | 118. | 4.175981 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00032 |  
-DATA | ugt0301_273 | 03 | 01 | 02 | 00 | Twist Drill 14.1 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 14.1 | 2 | 145.763 | 0.0 | 3 | 114. | 118. | 4.236067 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00032 |  
-DATA | ugt0301_274 | 03 | 01 | 02 | 00 | Twist Drill 14.2 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 14.2 | 2 | 145.733 | 0.0 | 3 | 114. | 118. | 4.266110 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00032 |  
-DATA | ugt0301_275 | 03 | 01 | 02 | 00 | Twist Drill 14.3 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 14.3 | 2 | 145.733 | 0.0 | 3 | 114. | 118. | 4.296153 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00032 |  
-DATA | ugt0301_276 | 03 | 01 | 02 | 00 | Twist Drill 14.4 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 14.4 | 2 | 145.673 | 0.0 | 3 | 114. | 118. | 4.326196 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00032 |  
-DATA | ugt0301_277 | 03 | 01 | 02 | 00 | Twist Drill 14.6 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 14.6 | 2 | 145.613 | 0.0 | 3 | 114. | 118. | 4.386283 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00032 |  
-DATA | ugt0301_278 | 03 | 01 | 02 | 00 | Twist Drill 14.7 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 14.7 | 2 | 145.583 | 0.0 | 3 | 114. | 118. | 4.416326 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00032 |  
-DATA | ugt0301_279 | 03 | 01 | 02 | 00 | Twist Drill 14.8 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 14.8 | 2 | 145.553 | 0.0 | 3 | 114. | 118. | 4.446369 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00032 |  
-DATA | ugt0301_280 | 03 | 01 | 02 | 00 | Twist Drill 14.9 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 14.9 | 2 | 145.523 | 0.0 | 3 | 114. | 118. | 4.476412 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00032 |  
-DATA | ugt0301_281 | 03 | 01 | 02 | 00 | Twist Drill 15.1 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 15.1 | 2 | 151.463 | 0.0 | 3 | 120. | 118. | 4.536498 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00032 |  
-DATA | ugt0301_282 | 03 | 01 | 02 | 00 | Twist Drill 15.2 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 15.2 | 2 | 151.433 | 0.0 | 3 | 120. | 118. | 4.566541 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00032 |  
-DATA | ugt0301_283 | 03 | 01 | 02 | 00 | Twist Drill 15.3 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 15.3 | 2 | 151.403 | 0.0 | 3 | 120. | 118. | 4.596584 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00032 |  
-DATA | ugt0301_284 | 03 | 01 | 02 | 00 | Twist Drill 15.4 mm | TMC0_00001 | HSS |   |   |   | 310 | Steep Taper SKG40 | 15.4 | 2 | 151.373 | 0.0 | 3 | 120. | 118. | 4.626627 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00044 |  
-DATA | ugt0301_285 | 03 | 01 | 02 | 00 | Twist Drill 16.1 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 16.1 | 2 | 156.163 | 0.0 | 3 | 125. | 118. | 4.836928 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00032 |  
-DATA | ugt0301_286 | 03 | 01 | 02 | 00 | Twist Drill 16.2 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 16.2 | 2 | 156.133 | 0.0 | 3 | 125. | 118. | 4.866971 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00032 |  
-DATA | ugt0301_287 | 03 | 01 | 02 | 00 | Twist Drill 16.3 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 16.3 | 2 | 156.102 | 0.0 | 3 | 125. | 118. | 4.897014 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00032 |  
-DATA | ugt0301_288 | 03 | 01 | 02 | 00 | Twist Drill 16.4 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 16.4 | 2 | 156.072 | 0.0 | 3 | 125. | 118. | 4.927057 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00032 |  
-DATA | ugt0301_289 | 03 | 01 | 02 | 00 | Twist Drill 16.6 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 16.6 | 2 | 156.012 | 0.0 | 3 | 125. | 118. | 4.987143 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00032 |  
-DATA | ugt0301_290 | 03 | 01 | 02 | 00 | Twist Drill 16.7 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 16.7 | 2 | 155.982 | 0.0 | 3 | 125. | 118. | 5.017186 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00032 |  
-DATA | ugt0301_291 | 03 | 01 | 02 | 00 | Twist Drill 16.8 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 16.8 | 2 | 155.952 | 0.0 | 3 | 125. | 118. | 5.047229 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00032 |  
-DATA | ugt0301_292 | 03 | 01 | 02 | 00 | Twist Drill 16.9 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 16.9 | 2 | 155.922 | 0.0 | 3 | 120. | 118. | 5.077272 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00032 |  
-DATA | ugt0301_352 | 03 | 01 | 02 | 00 | Twist Drill 10.75 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 10.75 | 2 | 90. | 0.0 | 3 | 84. | 118. | 3.229626 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_354 | 03 | 01 | 02 | 00 | Twist Drill 11.750 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 11.75 | 2 | 90. | 0.0 | 3 | 84. | 118. | 3.530056 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_356 | 03 | 01 | 02 | 00 | Twist Drill 12.750 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 12.75 | 2 | 95. | 0.0 | 3 | 91. | 118. | 3.830486 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00004 |  
-DATA | ugt0301_358 | 03 | 01 | 02 | 00 | Twist Drill 13.75 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 13.75 | 2 | 100. | 0.0 | 3 | 98. | 118. | 4.130917 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_360 | 03 | 01 | 02 | 00 | Twist Drill 14.750 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 14.75 | 2 | 110. | 0.0 | 3 | 94. | 118. | 4.431347 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_362 | 03 | 01 | 02 | 00 | Twist Drill 15.750 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 15.75 | 2 | 120. | 0.0 | 3 | 115. | 118. | 4.731777 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_364 | 03 | 01 | 02 | 00 | Twist Drill 16.750 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 16.75 | 2 | 125. | 0.0 | 3 | 115. | 118. | 5.032208 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00004 |  
-DATA | ugt0301_366 | 03 | 01 | 02 | 00 | Twist Drill 17.750 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 17.75 | 2 | 135. | 0.0 | 3 | 130. | 118. | 5.332638 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00004 |  
-DATA | ugt0301_367 | 03 | 01 | 02 | 00 | Twist Drill 4.25 mm | TMC0_00001 | HSS |   |   |   | 120 | Parallel ZYV40 | 4.25 | 2 | 41.738 | 0.0 | 3 | 41. | 118. | 1.276829 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_368 | 03 | 01 | 02 | 00 | Carbide Drill 11 mm | TMC0_00002 | Carbide |   |   |   | 330 | Steep Taper SKG50 | 11. | 2 | 96. | 0.0 | 3 | 94. | 118. | 3.304733 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00002 |  
-DATA | ugt0301_369 | 03 | 01 | 02 | 00 | Twist Drill Flat Bottom 7.5 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 7.5 | 2 | 100. | 0.0 | 3 | 60. | 180. | 0.000000 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00002 |  
-DATA | ugt0301_370 | 03 | 01 | 02 | 00 | Twist Drill Flat Bottom 9.5 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 9.5 | 2 | 100. | 0.0 | 3 | 81. | 180. | 0.000000 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00002 |  
-DATA | ugt0301_371 | 03 | 01 | 02 | 00 | Twist Drill Flat Bottom 10 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 10. | 2 | 100. | 0.0 | 3 | 87.5 | 180. | 0.000000 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00045 |  
-DATA | ugt0301_372 | 03 | 01 | 02 | 00 | Twist Drill Flat Bottom 11 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 11. | 2 | 100. | 0.0 | 3 | 94. | 180. | 0.000000 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00002 |  
-DATA | ugt0301_373 | 03 | 01 | 02 | 00 | Twist Drill Flat Bottom 12 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 12. | 2 | 120 | 0.0 | 3 | 101. | 180. | 0.000000 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_374 | 03 | 01 | 02 | 00 | Twist Drill Flat Bottom 13 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 13. | 2 | 120. | 0.0 | 3 | 101. | 180. | 0.000000 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00036 |  
-DATA | ugt0301_375 | 03 | 01 | 02 | 00 | Twist Drill Flat Bottom 15 mm | TMC0_00001 | HSS |   |   |   | 310 | Steep Taper SKG40 | 15. | 2 | 143. | 0.0 | 3 | 120. | 180. | 0.000000 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00033 |  
-DATA | ugt0301_376 | 03 | 01 | 02 | 00 | Twist Drill Flat Bottom 16.5 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 16.5 | 2 | 156.102 | 0.0 | 3 | 125. | 180. | 0.000000 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00032 |  
-DATA | ugt0301_377 | 03 | 01 | 02 | 00 | Twist Drill Flat Bottom 19.5 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 19.5 | 2 | 163. | 0.0 | 3 | 140. | 180. | 0.000000 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00037 |  
-DATA | ugt0301_378 | 03 | 01 | 02 | 00 | Twist Drill Flat Bottom 22.5 mm | TMC0_00001 | HSS |   |   |   | 330 | Steep Taper SKG50 | 22.5 | 2 | 178. | 0.0 | 3 | 155. | 180. | 0.000000 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00037 |  
-DATA | ugt0301_379 | 03 | 01 | 02 | 00 | Twist Drill Flat Bottom 25.5 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 25.5 | 2 | 184.26 | 0.0 | 3 | 165. | 180. | 0.000000 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00039 |  
-DATA | ugt0301_380 | 03 | 01 | 02 | 00 | Twist Drill Flat Bottom 26.5 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 26.5 | 2 | 184.26 | 0.0 | 3 | 165. | 180. | 0.000000 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00039 |  
-DATA | ugt0301_381 | 03 | 01 | 02 | 00 | Twist Drill Flat Bottom 30.5 mm | TMC0_00001 | HSS |   |   |   | 310 | Steep Taper SKG40 | 30.5 | 2 | 200.97 | 0.0 | 3 | 175. | 180. | 0.000000 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00034 |  
-DATA | ugt0301_382 | 03 | 01 | 02 | 00 | Twist Drill Flat Bottom 32.5 mm | TMC0_00001 | HSS |   |   |   | 310 | Steep Taper SKG40 | 32.5 | 2 | 200.97 | 0.0 | 3 | 175. | 180. | 0.000000 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00034 |  
-DATA | ugt0301_383 | 03 | 01 | 02 | 00 | Twist Drill Flat Bottom 33.5 mm | TMC0_00001 | HSS |   |   |   | 310 | Steep Taper SKG40 | 33.5 | 2 | 200.97 | 0.0 | 3 | 175. | 180. | 0.000000 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00034 |  
-DATA | ugt0301_384 | 03 | 01 | 02 | 00 | Twist Drill Flat Bottom 38.5 mm | TMC0_00001 | HSS |   |   |   | 310 | Steep Taper SKG40 | 38.5 | 2 | 200.97 | 0.0 | 3 | 175. | 180. | 0.000000 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00034 |  
-DATA | ugt0301_385 | 03 | 01 | 02 | 00 | Twist Drill Flat Bottom 42 mm | TMC0_00001 | HSS |   |   |   | 310 | Steep Taper SKG40 | 42. | 2 | 200.97 | 0.0 | 3 | 175. | 180. | 0.000000 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00034 |  
-DATA | ugt0301_386 | 03 | 01 | 02 | 00 | Twist Drill 25.5 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 25.5 | 2 | 184.26 | 0.0 | 3 | 165. | 118. | 7.660973 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00039 |  
-DATA | ugt0301_387 | 03 | 01 | 02 | 00 | Twist Drill 26 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 26 | 2 | 184.26 | 0.0 | 3 | 165. | 118. | 7.811188 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00039 |  
-DATA | ugt0301_388 | 03 | 01 | 02 | 00 | Twist Drill 26.5 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 26.5 | 2 | 184.26 | 0.0 | 3 | 165. | 118. | 7.961403 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00039 |  
-DATA | ugt0301_389 | 03 | 01 | 02 | 00 | Twist Drill 27 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 27 | 2 | 184.26 | 0.0 | 3 | 165. | 118. | 8.111618 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00039 |  
-DATA | ugt0301_390 | 03 | 01 | 02 | 00 | Twist Drill 27.5 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 27.5 | 2 | 184.26 | 0.0 | 3 | 165. | 118. | 8.261834 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00039 |  
-DATA | ugt0301_391 | 03 | 01 | 02 | 00 | Twist Drill 28 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 28 | 2 | 184.26 | 0.0 | 3 | 165. | 118. | 8.412049 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00039 |  
-DATA | ugt0301_392 | 03 | 01 | 02 | 00 | Twist Drill 28.5 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 28.5 | 2 | 184.26 | 0.0 | 3 | 165. | 118. | 8.562264 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00039 |  
-DATA | ugt0301_393 | 03 | 01 | 02 | 00 | Twist Drill 29 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 29 | 2 | 184.26 | 0.0 | 3 | 165. | 118. | 8.712479 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00039 |  
-DATA | ugt0301_394 | 03 | 01 | 02 | 00 | Twist Drill 29.5 mm | TMC0_00001 | HSS |   |   |   | 300 | Steep Taper SKG30 | 29.5 | 2 | 184.26 | 0.0 | 3 | 165. | 118. | 8.862694 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00039 |  
-DATA | ugt0301_400 | 03 | 01 | 02 | 00 | Carbide Drill 0.5 mm | TMC0_00002 | Carbide |   |   |   | 300 | Steep Taper SKG30 | .5 | 2 | 20 | 0.0 | 3 | 6. | 118. | 0.150215 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00040 |  
-DATA | ugt0301_401 | 03 | 01 | 02 | 00 | Carbide Drill 0.6 mm | TMC0_00002 | Carbide |   |   |   | 300 | Steep Taper SKG30 | .6 | 2 | 20 | 0.0 | 3 | 7. | 118. | 0.180258 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00040 |  
-DATA | ugt0301_402 | 03 | 01 | 02 | 00 | Carbide Drill 0.7 mm | TMC0_00002 | Carbide |   |   |   | 300 | Steep Taper SKG30 | .7 | 2 | 20 | 0.0 | 3 | 9. | 118. | 0.210301 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00040 |  
-DATA | ugt0301_403 | 03 | 01 | 02 | 00 | Carbide Drill 0.8 mm | TMC0_00002 | Carbide |   |   |   | 300 | Steep Taper SKG30 | .8 | 2 | 19.759 | 0.0 | 3 | 10. | 118. | 0.240344 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00040 |  
-DATA | ugt0301_404 | 03 | 01 | 02 | 00 | Carbide Drill 0.9 mm | TMC0_00002 | Carbide |   |   |   | 300 | Steep Taper SKG30 | .9 | 2 | 21.729 | 0.0 | 3 | 11. | 118. | 0.270387 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00040 |  
-DATA | ugt0301_405 | 03 | 01 | 02 | 00 | Carbide Drill 1.0 mm | TMC0_00002 | Carbide |   |   |   | 300 | Steep Taper SKG30 | 1.0 | 2 | 21.729 | 0.0 | 3 | 11. | 118. | 0.300430 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00040 |  
-DATA | ugt0301_406 | 03 | 01 | 02 | 00 | Carbide Drill 1.1 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 1.1 | 2 | 23.669 | 0.0 | 3 | 14. | 118. | 0.330473 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_407 | 03 | 01 | 02 | 00 | Carbide Drill 1.2 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 1.2 | 2 | 25.639 | 0.0 | 3 | 16. | 118. | 0.360516 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_408 | 03 | 01 | 02 | 00 | Carbide Drill 1.3 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 1.3 | 2 | 25.609 | 0.0 | 3 | 16. | 118. | 0.390559 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_409 | 03 | 01 | 02 | 00 | Carbide Drill 1.4 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 1.4 | 2 | 27.579 | 0.0 | 3 | 18. | 118. | 0.420602 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_410 | 03 | 01 | 02 | 00 | Carbide Drill 1.5 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 1.5 | 2 | 27.579 | 0.0 | 3 | 18. | 118. | 0.450645 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_411 | 03 | 01 | 02 | 00 | Carbide Drill 1.6 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 1.6 | 2 | 29.519 | 0.0 | 3 | 20. | 118. | 0.480688 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_412 | 03 | 01 | 02 | 00 | Carbide Drill 1.7 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 1.7 | 2 | 29.489 | 0.0 | 3 | 20. | 118. | 0.510732 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_413 | 03 | 01 | 02 | 00 | Carbide Drill 1.8 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 1.8 | 2 | 32.576 | 0.0 | 3 | 22. | 118. | 0.540775 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_414 | 03 | 01 | 02 | 00 | Carbide Drill 1.9 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 1.9 | 2 | 32.548 | 0.0 | 3 | 22. | 118. | 0.570818 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_415 | 03 | 01 | 02 | 00 | Carbide Drill 2.0 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 2.0 | 2 | 34.399 | 0.0 | 3 | 24. | 118. | 0.600861 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_416 | 03 | 01 | 02 | 00 | Carbide Drill 2.1 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 2.1 | 2 | 34.399 | 0.0 | 3 | 24. | 118. | 0.630904 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_417 | 03 | 01 | 02 | 00 | Carbide Drill 2.2 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 2.2 | 2 | 36.33 | 0.0 | 3 | 27. | 118. | 0.660947 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_418 | 03 | 01 | 02 | 00 | Carbide Drill 2.3 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 2.3 | 2 | 36.3 | 0.0 | 3 | 27. | 118. | 0.690990 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_419 | 03 | 01 | 02 | 00 | Carbide Drill 2.4 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 2.4 | 2 | 39.278 | 0.0 | 3 | 30. | 118. | 0.721033 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_420 | 03 | 01 | 02 | 00 | Carbide Drill 2.5 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 2.5 | 2 | 40.049 | 0.0 | 3 | 30. | 118. | 0.751076 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_421 | 03 | 01 | 02 | 00 | Carbide Drill 2.6 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 2.6 | 2 | 40.049 | 0.0 | 3 | 30. | 118. | 0.781119 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_422 | 03 | 01 | 02 | 00 | Carbide Drill 2.7 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 2.7 | 2 | 42.32 | 0.0 | 3 | 33. | 118. | 0.811162 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_423 | 03 | 01 | 02 | 00 | Carbide Drill 2.8 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 2.8 | 2 | 42.914 | 0.0 | 3 | 33. | 118. | 0.841205 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_424 | 03 | 01 | 02 | 00 | Carbide Drill 2.9 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 2.9 | 2 | 42.128 | 0.0 | 3 | 33. | 118. | 0.871248 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_425 | 03 | 01 | 02 | 00 | Carbide Drill 3.0 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 3.0 | 2 | 45.068 | 0.0 | 3 | 36. | 118. | 0.901291 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_426 | 03 | 01 | 02 | 00 | Carbide Drill 3.1 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 3.1 | 2 | 45.068 | 0.0 | 3 | 36. | 118. | 0.931334 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_427 | 03 | 01 | 02 | 00 | Carbide Drill 3.2 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 3.2 | 2 | 45.038 | 0.0 | 3 | 36. | 118. | 0.961377 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_428 | 03 | 01 | 02 | 00 | Carbide Drill 3.3 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 3.3 | 2 | 45.008 | 0.0 | 3 | 36. | 118. | 0.991420 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_429 | 03 | 01 | 02 | 00 | Carbide Drill 3.4 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 3.4 | 2 | 47.978 | 0.0 | 3 | 39. | 118. | 1.021463 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_430 | 03 | 01 | 02 | 00 | Carbide Drill 3.5 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 3.5 | 2 | 47.978 | 0.0 | 3 | 39. | 118. | 1.051506 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_431 | 03 | 01 | 02 | 00 | Carbide Drill 3.6 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 3.6 | 2 | 47.918 | 0.0 | 3 | 39. | 118. | 1.081549 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_432 | 03 | 01 | 02 | 00 | Carbide Drill 3.7 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 3.7 | 2 | 47.888 | 0.0 | 3 | 39. | 118. | 1.111592 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_433 | 03 | 01 | 02 | 00 | Carbide Drill 3.8 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 3.8 | 2 | 51.858 | 0.0 | 3 | 43. | 118. | 1.141635 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_434 | 03 | 01 | 02 | 00 | Carbide Drill 3.9 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 3.9 | 2 | 52.412 | 0.0 | 3 | 43. | 118. | 1.171678 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_435 | 03 | 01 | 02 | 00 | Carbide Drill 4.0 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 4.0 | 2 | 51.768 | 0.0 | 3 | 43. | 118. | 1.201721 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_436 | 03 | 01 | 02 | 00 | Carbide Drill 4.1 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 4.1 | 2 | 51.768 | 0.0 | 3 | 43. | 118. | 1.231764 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_437 | 03 | 01 | 02 | 00 | Carbide Drill 4.2 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 4.2 | 2 | 51.738 | 0.0 | 3 | 43. | 118. | 1.261807 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_438 | 03 | 01 | 02 | 00 | Carbide Drill 4.3 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 4.3 | 2 | 55.708 | 0.0 | 3 | 47. | 118. | 1.291850 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_439 | 03 | 01 | 02 | 00 | Carbide Drill 4.4 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 4.4 | 2 | 55.678 | 0.0 | 3 | 47. | 118. | 1.321893 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_440 | 03 | 01 | 02 | 00 | Carbide Drill 4.5 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 4.5 | 2 | 55.678 | 0.0 | 3 | 47. | 118. | 1.351936 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_441 | 03 | 01 | 02 | 00 | Carbide Drill 4.6 mm | TMC0_00002 | Carbide |   |   |   | 300 | Steep Taper SKG30 | 4.6 | 2 | 58.598 | 0.0 | 3 | 47. | 118. | 1.381979 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_442 | 03 | 01 | 02 | 00 | Carbide Drill 4.7 mm | TMC0_00002 | Carbide |   |   |   | 300 | Steep Taper SKG30 | 4.7 | 2 | 55.587 | 0.0 | 3 | 47. | 118. | 1.412022 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_443 | 03 | 01 | 02 | 00 | Carbide Drill 4.8 mm | TMC0_00002 | Carbide |   |   |   | 300 | Steep Taper SKG30 | 4.8 | 2 | 63.262 | 0.0 | 3 | 52. | 118. | 1.442065 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_444 | 03 | 01 | 02 | 00 | Carbide Drill 4.9 mm | TMC0_00002 | Carbide |   |   |   | 300 | Steep Taper SKG30 | 4.9 | 2 | 60.527 | 0.0 | 3 | 52. | 118. | 1.472109 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_445 | 03 | 01 | 02 | 00 | Carbide Drill 5.0 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 5.0 | 2 | 60.467 | 0.0 | 3 | 52. | 118. | 1.502152 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_446 | 03 | 01 | 02 | 00 | Carbide Drill 5.1 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 5.1 | 2 | 60.467 | 0.0 | 3 | 52. | 118. | 1.532195 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_447 | 03 | 01 | 02 | 00 | Carbide Drill 5.2 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 5.2 | 2 | 60.437 | 0.0 | 3 | 52. | 118. | 1.562238 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_448 | 03 | 01 | 02 | 00 | Carbide Drill 5.3 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 5.3 | 2 | 60.407 | 0.0 | 3 | 52. | 118. | 1.592281 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_449 | 03 | 01 | 02 | 00 | Carbide Drill 5.4 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 5.4 | 2 | 75.377 | 0.0 | 3 | 57. | 118. | 1.622324 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_450 | 03 | 01 | 02 | 00 | Carbide Drill 5.5 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 5.5 | 2 | 75.377 | 0.0 | 3 | 57. | 118. | 1.652367 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_451 | 03 | 01 | 02 | 00 | Carbide Drill 5.6 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 5.6 | 2 | 75.317 | 0.0 | 3 | 57. | 118. | 1.682410 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_452 | 03 | 01 | 02 | 00 | Carbide Drill 5.7 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 5.7 | 2 | 75.73 | 0.0 | 3 | 57. | 118. | 1.712453 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_453 | 03 | 01 | 02 | 00 | Carbide Drill 5.8 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 5.8 | 2 | 75.257 | 0.0 | 3 | 57. | 118. | 1.742496 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_454 | 03 | 01 | 02 | 00 | Carbide Drill 5.9 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 5.9 | 2 | 75.671 | 0.0 | 3 | 57. | 118. | 1.772539 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_455 | 03 | 01 | 02 | 00 | Carbide Drill 6.0 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 6.0 | 2 | 81.568 | 0.0 | 3 | 63. | 118. | 1.802582 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_456 | 03 | 01 | 02 | 00 | Carbide Drill 6.1 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 6.1 | 2 | 81.568 | 0.0 | 3 | 63. | 118. | 1.832625 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_457 | 03 | 01 | 02 | 00 | Carbide Drill 6.2 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 6.2 | 2 | 81.137 | 0.0 | 3 | 63. | 118. | 1.862668 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_458 | 03 | 01 | 02 | 00 | Carbide Drill 6.3 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 6.3 | 2 | 81.508 | 0.0 | 3 | 63. | 118. | 1.892711 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_459 | 03 | 01 | 02 | 00 | Carbide Drill 6.4 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 6.4 | 2 | 81.478 | 0.0 | 3 | 63. | 118. | 1.922754 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_460 | 03 | 01 | 02 | 00 | Carbide Drill 6.5 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 6.5 | 2 | 81.478 | 0.0 | 3 | 63. | 118. | 1.952797 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_461 | 03 | 01 | 02 | 00 | Carbide Drill 6.6 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 6.6 | 2 | 81.017 | 0.0 | 3 | 63. | 118. | 1.982840 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_462 | 03 | 01 | 02 | 00 | Carbide Drill 6.7 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 6.7 | 2 | 81.3 | 0.0 | 3 | 63. | 118. | 2.012883 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_463 | 03 | 01 | 02 | 00 | Carbide Drill 6.8 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 6.8 | 2 | 86.957 | 0.0 | 3 | 69. | 118. | 2.042926 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_464 | 03 | 01 | 02 | 00 | Carbide Drill 6.9 mm | TMC0_00002 | Carbide |   |   |   | 120 | Parallel ZYV40 | 6.9 | 2 | 86.927 | 0.0 | 3 | 69. | 118. | 2.072969 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00041 |  
-DATA | ugt0301_465 | 03 | 01 | 02 | 00 | Carbide Drill 7.0 mm | TMC0_00002 | Carbide |   |   |   | 300 | Steep Taper SKG30 | 7.0 | 2 | 86.866 | 0.0 | 3 | 69. | 118. | 2.103012 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00004 |  
-DATA | ugt0301_466 | 03 | 01 | 02 | 00 | Carbide Drill 7.1 mm | TMC0_00002 | Carbide |   |   |   | 300 | Steep Taper SKG30 | 7.1 | 2 | 86.866 | 0.0 | 3 | 69. | 118. | 2.133055 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00004 |  
-DATA | ugt0301_467 | 03 | 01 | 02 | 00 | Carbide Drill 7.2 mm | TMC0_00002 | Carbide |   |   |   | 300 | Steep Taper SKG30 | 7.2 | 2 | 86.836 | 0.0 | 3 | 69. | 118. | 2.163098 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00004 |  
-DATA | ugt0301_468 | 03 | 01 | 02 | 00 | Carbide Drill 7.3 mm | TMC0_00002 | Carbide |   |   |   | 300 | Steep Taper SKG30 | 7.3 | 2 | 86.806 | 0.0 | 3 | 69. | 118. | 2.193141 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00004 |  
-DATA | ugt0301_469 | 03 | 01 | 02 | 00 | Carbide Drill 7.4 mm | TMC0_00002 | Carbide |   |   |   | 300 | Steep Taper SKG30 | 7.4 | 2 | 86.77 | 0.0 | 3 | 69. | 118. | 2.223184 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00004 |  
-DATA | ugt0301_470 | 03 | 01 | 02 | 00 | Carbide Drill 7.5 mm | TMC0_00002 | Carbide |   |   |   | 310 | Steep Taper SKG40 | 7.5 | 2 | 93.71 | 0.0 | 3 | 76. | 118. | 2.253227 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00022 |  
-DATA | ugt0301_471 | 03 | 01 | 02 | 00 | Carbide Drill 7.6 mm | TMC0_00002 | Carbide |   |   |   | 310 | Steep Taper SKG40 | 7.6 | 2 | 93.71 | 0.0 | 3 | 76. | 118. | 2.283270 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00022 |  
-DATA | ugt0301_472 | 03 | 01 | 02 | 00 | Carbide Drill 7.7 mm | TMC0_00002 | Carbide |   |   |   | 310 | Steep Taper SKG40 | 7.7 | 2 | 93.68 | 0.0 | 3 | 76. | 118. | 2.313313 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00022 |  
-DATA | ugt0301_473 | 03 | 01 | 02 | 00 | Carbide Drill 7.8 mm | TMC0_00002 | Carbide |   |   |   | 310 | Steep Taper SKG40 | 7.8 | 2 | 93.65 | 0.0 | 3 | 76. | 118. | 2.343356 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00022 |  
-DATA | ugt0301_474 | 03 | 01 | 02 | 00 | Carbide Drill 7.9 mm | TMC0_00002 | Carbide |   |   |   | 310 | Steep Taper SKG40 | 7.9 | 2 | 93.62 | 0.0 | 3 | 76. | 118. | 2.373399 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00022 |  
-DATA | ugt0301_475 | 03 | 01 | 02 | 00 | Carbide Drill 8.0 mm | TMC0_00002 | Carbide |   |   |   | 300 | Steep Taper SKG30 | 8.0 | 2 | 92.53 | 0.0 | 3 | 75. | 118. | 2.403442 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00042 |  
-DATA | ugt0301_476 | 03 | 01 | 02 | 00 | Carbide Drill 8.1 mm | TMC0_00002 | Carbide |   |   |   | 300 | Steep Taper SKG30 | 8.1 | 2 | 92.53 | 0.0 | 3 | 75. | 118. | 2.433486 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00042 |  
-DATA | ugt0301_477 | 03 | 01 | 02 | 00 | Carbide Drill 8.2 mm | TMC0_00002 | Carbide |   |   |   | 300 | Steep Taper SKG30 | 8.2 | 2 | 92.53 | 0.0 | 3 | 75. | 118. | 2.463529 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00042 |  
-DATA | ugt0301_478 | 03 | 01 | 02 | 00 | Carbide Drill 8.3 mm | TMC0_00002 | Carbide |   |   |   | 300 | Steep Taper SKG30 | 8.3 | 2 | 92.506 | 0.0 | 3 | 75. | 118. | 2.493572 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00042 |  
-DATA | ugt0301_479 | 03 | 01 | 02 | 00 | Carbide Drill 8.4 mm | TMC0_00002 | Carbide |   |   |   | 300 | Steep Taper SKG30 | 8.4 | 2 | 92.47 | 0.0 | 3 | 75. | 118. | 2.523615 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00042 |  
-DATA | ugt0301_480 | 03 | 01 | 02 | 00 | Carbide Drill 8.5 mm | TMC0_00002 | Carbide |   |   |   | 300 | Steep Taper SKG30 | 8.5 | 2 | 92.47 | 0.0 | 3 | 75. | 118. | 2.553658 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00042 |  
-DATA | ugt0301_481 | 03 | 01 | 02 | 00 | Carbide Drill 8.6 mm | TMC0_00002 | Carbide |   |   |   | 300 | Steep Taper SKG30 | 8.6 | 2 | 100.186 | 0.0 | 3 | 81. | 118. | 2.583701 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_482 | 03 | 01 | 02 | 00 | Carbide Drill 8.7 mm | TMC0_00002 | Carbide |   |   |   | 300 | Steep Taper SKG30 | 8.7 | 2 | 100.157 | 0.0 | 3 | 81. | 118. | 2.613744 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_483 | 03 | 01 | 02 | 00 | Carbide Drill 8.8 mm | TMC0_00002 | Carbide |   |   |   | 300 | Steep Taper SKG30 | 8.8 | 2 | 100.128 | 0.0 | 3 | 81. | 118. | 2.643787 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_484 | 03 | 01 | 02 | 00 | Carbide Drill 8.9 mm | TMC0_00002 | Carbide |   |   |   | 300 | Steep Taper SKG30 | 8.9 | 2 | 108.326 | 0.0 | 3 | 81. | 118. | 2.673830 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_485 | 03 | 01 | 02 | 00 | Carbide Drill 9.0 mm | TMC0_00002 | Carbide |   |   |   | 300 | Steep Taper SKG30 | 9.0 | 2 | 108.266 | 0.0 | 3 | 81. | 118. | 2.703873 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_486 | 03 | 01 | 02 | 00 | Carbide Drill 9.1 mm | TMC0_00002 | Carbide |   |   |   | 300 | Steep Taper SKG30 | 9.1 | 2 | 108.266 | 0.0 | 3 | 81. | 118. | 2.733916 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_487 | 03 | 01 | 02 | 00 | Carbide Drill 9.2 mm | TMC0_00002 | Carbide |   |   |   | 300 | Steep Taper SKG30 | 9.2 | 2 | 100.01 | 0.0 | 3 | 81. | 118. | 2.763959 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_488 | 03 | 01 | 02 | 00 | Carbide Drill 9.3 mm | TMC0_00002 | Carbide |   |   |   | 300 | Steep Taper SKG30 | 9.3 | 2 | 108.205 | 0.0 | 3 | 81. | 118. | 2.794002 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_489 | 03 | 01 | 02 | 00 | Carbide Drill 9.4 mm | TMC0_00002 | Carbide |   |   |   | 300 | Steep Taper SKG30 | 9.4 | 2 | 108.175 | 0.0 | 3 | 81. | 118. | 2.824045 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_490 | 03 | 01 | 02 | 00 | Carbide Drill 9.5 mm | TMC0_00002 | Carbide |   |   |   | 300 | Steep Taper SKG30 | 9.5 | 2 | 108.175 | 0.0 | 3 | 81. | 118. | 2.854088 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_491 | 03 | 01 | 02 | 00 | Carbide Drill 9.6 mm | TMC0_00002 | Carbide |   |   |   | 310 | Steep Taper SKG40 | 9.6 | 2 | 100.115 | 0.0 | 3 | 87. | 118. | 2.884131 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00002 |  
-DATA | ugt0301_492 | 03 | 01 | 02 | 00 | Carbide Drill 9.7 mm | TMC0_00002 | Carbide |   |   |   | 310 | Steep Taper SKG40 | 9.7 | 2 | 100.643 | 0.0 | 3 | 87. | 118. | 2.914174 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00002 |  
-DATA | ugt0301_493 | 03 | 01 | 02 | 00 | Carbide Drill 9.8 mm | TMC0_00002 | Carbide |   |   |   | 310 | Steep Taper SKG40 | 9.8 | 2 | 100. | 0.0 | 3 | 87. | 118. | 2.944217 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00002 |  
-DATA | ugt0301_494 | 03 | 01 | 02 | 00 | Carbide Drill 9.9 mm | TMC0_00002 | Carbide |   |   |   | 310 | Steep Taper SKG40 | 9.9 | 2 | 100.586 | 0.0 | 3 | 87. | 118. | 2.974260 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00002 |  
-DATA | ugt0301_495 | 03 | 01 | 02 | 00 | Carbide Drill 10.0 mm | TMC0_00002 | Carbide |   |   |   | 310 | Steep Taper SKG40 | 10.0 | 2 | 150.965 | 0.0 | 3 | 90.5 | 118. | 3.004303 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00045 |  
-DATA | ugt0301_496 | 03 | 01 | 02 | 00 | Carbide Drill 10.1 mm | TMC0_00002 | Carbide |   |   |   | 310 | Steep Taper SKG40 | 10.1 | 2 | 100.965 | 0.0 | 3 | 87. | 118. | 3.034346 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00002 |  
-DATA | ugt0301_497 | 03 | 01 | 02 | 00 | Carbide Drill 10.2 mm | TMC0_00002 | Carbide |   |   |   | 310 | Steep Taper SKG40 | 10.2 | 2 | 100.935 | 0.0 | 3 | 87. | 118. | 3.064389 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00002 |  
-DATA | ugt0301_498 | 03 | 01 | 02 | 00 | Carbide Drill 10.3 mm | TMC0_00002 | Carbide |   |   |   | 310 | Steep Taper SKG40 | 10.3 | 2 | 100.905 | 0.0 | 3 | 87. | 118. | 3.094432 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00002 |  
-DATA | ugt0301_499 | 03 | 01 | 02 | 00 | Carbide Drill 10.4 mm | TMC0_00002 | Carbide |   |   |   | 310 | Steep Taper SKG40 | 10.4 | 2 | 100.875 | 0.0 | 3 | 87. | 118. | 3.124475 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00002 |  
-DATA | ugt0301_500 | 03 | 01 | 02 | 00 | Carbide Drill 10.5 mm | TMC0_00002 | Carbide |   |   |   |   |   | 10.5 | 2 | 110.05 | 0.0 | 3 | 87. | 118. | 3.154518 | 0.0 | 0 |   | 0.0 | 1.0 |   |   |   |   |  
-DATA | ugt0301_501 | 03 | 01 | 02 | 00 | Carbide Drill 10.6 mm | TMC0_00002 | Carbide |   |   |   |   |   | 10.6 | 2 | 110.05 | 0.0 | 3 | 87. | 118. | 3.184561 | 0.0 | 0 |   | 0.0 | 1.0 |   |   |   |   |  
-DATA | ugt0301_502 | 03 | 01 | 02 | 00 | Carbide Drill 10.7 mm | TMC0_00002 | Carbide |   |   |   |   |   | 10.7 | 2 | 110.785 | 0.0 | 3 | 94. | 118. | 3.214604 | 0.0 | 0 |   | 0.0 | 1.0 |   |   |   |   |  
-DATA | ugt0301_503 | 03 | 01 | 02 | 00 | Carbide Drill 10.8 mm | TMC0_00002 | Carbide |   |   |   |   |   | 10.8 | 2 | 110.823 | 0.0 | 3 | 94. | 118. | 3.244647 | 0.0 | 0 |   | 0.0 | 1.0 |   |   |   |   |  
-DATA | ugt0301_504 | 03 | 01 | 02 | 00 | Carbide Drill 10.9 mm | TMC0_00002 | Carbide |   |   |   |   |   | 10.9 | 2 | 120.794 | 0.0 | 3 | 94. | 118. | 3.274690 | 0.0 | 0 |   | 0.0 | 1.0 |   |   |   |   |  
-DATA | ugt0301_505 | 03 | 01 | 02 | 00 | Carbide Drill 11.0 mm | TMC0_00002 | Carbide |   |   |   | 300 | Steep Taper SKG30 | 11.0 | 2 | 120.2 | 0.0 | 3 | 94. | 118. | 3.304733 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_506 | 03 | 01 | 02 | 00 | Carbide Drill 11.1 mm | TMC0_00002 | Carbide |   |   |   | 300 | Steep Taper SKG30 | 11.1 | 2 | 120.2 | 0.0 | 3 | 94. | 118. | 3.334776 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_507 | 03 | 01 | 02 | 00 | Carbide Drill 11.2 mm | TMC0_00002 | Carbide |   |   |   | 300 | Steep Taper SKG30 | 11.2 | 2 | 120.635 | 0.0 | 3 | 94. | 118. | 3.364819 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_508 | 03 | 01 | 02 | 00 | Carbide Drill 11.3 mm | TMC0_00002 | Carbide |   |   |   | 300 | Steep Taper SKG30 | 11.3 | 2 | 120.482 | 0.0 | 3 | 94. | 118. | 3.394862 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_509 | 03 | 01 | 02 | 00 | Carbide Drill 11.4 mm | TMC0_00002 | Carbide |   |   |   | 300 | Steep Taper SKG30 | 11.4 | 2 | 120.112 | 0.0 | 3 | 94. | 118. | 3.424906 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_510 | 03 | 01 | 02 | 00 | Carbide Drill 11.5 mm | TMC0_00002 | Carbide |   |   |   | 300 | Steep Taper SKG30 | 11.5 | 2 | 120.112 | 0.0 | 3 | 94. | 118. | 3.454949 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_511 | 03 | 01 | 02 | 00 | Carbide Drill 11.6 mm | TMC0_00002 | Carbide |   |   |   | 310 | Steep Taper SKG40 | 11.6 | 2 | 120.515 | 0.0 | 3 | 94. | 118. | 3.484992 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00022 |  
-DATA | ugt0301_512 | 03 | 01 | 02 | 00 | Carbide Drill 11.7 mm | TMC0_00002 | Carbide |   |   |   | 310 | Steep Taper SKG40 | 11.7 | 2 | 120.484 | 0.0 | 3 | 94. | 118. | 3.515035 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00022 |  
-DATA | ugt0301_513 | 03 | 01 | 02 | 00 | Carbide Drill 11.8 mm | TMC0_00002 | Carbide |   |   |   | 310 | Steep Taper SKG40 | 11.8 | 2 | 120.428 | 0.0 | 3 | 94. | 118. | 3.545078 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00022 |  
-DATA | ugt0301_514 | 03 | 01 | 02 | 00 | Carbide Drill 11.9 mm | TMC0_00002 | Carbide |   |   |   | 310 | Steep Taper SKG40 | 11.9 | 2 | 130.191 | 0.0 | 3 | 101. | 118. | 3.575121 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00022 |  
-DATA | ugt0301_515 | 03 | 01 | 02 | 00 | Carbide Drill 12.0 mm | TMC0_00002 | Carbide |   |   |   | 300 | Steep Taper SKG30 | 12.0 | 2 | 130.79 | 0.0 | 3 | 101. | 118. | 3.605164 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_516 | 03 | 01 | 02 | 00 | Carbide Drill 12.1 mm | TMC0_00002 | Carbide |   |   |   | 300 | Steep Taper SKG30 | 12.1 | 2 | 130.79 | 0.0 | 3 | 101. | 118. | 3.635207 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_517 | 03 | 01 | 02 | 00 | Carbide Drill 12.2 mm | TMC0_00002 | Carbide |   |   |   | 300 | Steep Taper SKG30 | 12.2 | 2 | 130.334 | 0.0 | 3 | 101. | 118. | 3.665250 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_518 | 03 | 01 | 02 | 00 | Carbide Drill 12.3 mm | TMC0_00002 | Carbide |   |   |   | 300 | Steep Taper SKG30 | 12.3 | 2 | 130.304 | 0.0 | 3 | 101. | 118. | 3.695293 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_519 | 03 | 01 | 02 | 00 | Carbide Drill 12.4 mm | TMC0_00002 | Carbide |   |   |   | 300 | Steep Taper SKG30 | 12.4 | 2 | 130.707 | 0.0 | 3 | 101. | 118. | 3.725336 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_520 | 03 | 01 | 02 | 00 | Carbide Drill 12.5 mm | TMC0_00002 | Carbide |   |   |   | 300 | Steep Taper SKG30 | 12.5 | 2 | 130.707 | 0.0 | 3 | 101. | 118. | 3.755379 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00001 |  
-DATA | ugt0301_521 | 03 | 01 | 02 | 00 | Carbide Drill 12.6 mm | TMC0_00002 | Carbide |   |   |   | 300 | Steep Taper SKG30 | 12.6 | 2 | 130.214 | 0.0 | 3 | 101. | 118. | 3.785422 | 0.0 | 0 | 0.0 | 0.0 | 1.0 |   |   |   | HLD001_00004 |  
-DATA | ugt0301_522 | 03 | 01 | 02 | 00 | Carbide Drill 12.7 mm | TMC0_00002 | Carbide |   |   |   |   |   | 12.7 | 2 | 130.137 | 0.0 | 3 | 101. | 118. | 3.815465 | 0.0 | 0 |   | 0.0 | 1.0 |   |   |   |   |  
 #END_DATA
 
 
@@ -2377,7 +2062,6 @@ FORMAT LIBRF T ST DESCR MATREF MATDES TLNUM HLD HLDDES RIGID
 #CLASS PROBE
 FORMAT LIBRF T ST DESCR MATREF MATDES TLNUM HLD HLDDES RIGID
 #------------------------------------------------------------
-DATA | ugt0402_001 | 04 | 02 | Single tip dia 9mm x stem 72mm | TMC0_00041 | Ruby |   | 100 | Parallel 20 | 1.0
 #END_DATA
 
 #
@@ -2402,8 +2086,6 @@ DATA | ugt0402_001 | 04 | 02 | Single tip dia 9mm x stem 72mm | TMC0_00041 | Rub
 #CLASS WIRE
 FORMAT LIBRF T ST UGT UGST DESCR DIA TLNUM ADJREG CUTCOMREG MATREF MATDES HLD HLDDES HLDREF
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-DATA | ugt0601_001 | 06 | 01| 06| 00 | Wire EDM wire | 0.20000 | 0 | 0 | 0 | TMC0_00051 | Brass Wire |   |   | 
-DATA | ugt0601_002 | 06 | 01| 06| 00 | Wire EDM wire | 0.25000 | 0 | 0 | 0 | TMC0_00051 | Brass Wire |   |   | 
 #END_DATA
 #
 #  Laser

@@ -460,7 +460,6 @@ FORMATTING
   BLOCK_TEMPLATE auto_tool_change_1 
   {
        G_adjust[$mom_sys_adjust_code]
-       M_coolant[$mom_sys_coolant_code(ON)]
   }
 
   BLOCK_TEMPLATE auto_tool_change_2 
@@ -471,7 +470,25 @@ FORMATTING
 
   BLOCK_TEMPLATE auto_tool_change_3 
   {
-       M_spindle[$mom_sys_spindle_direction_code($mom_spindle_direction)]\opt
+       M_spindle[$mom_sys_spindle_direction_code($mom_spindle_direction)]
+  }
+
+  BLOCK_TEMPLATE auto_tool_change_4 
+  {
+       G[$mom_sys_delay_code(SECONDS)]
+       dwell[5]
+  }
+
+  BLOCK_TEMPLATE auto_tool_change_5 
+  {
+       S[$mom_spindle_speed]
+  }
+
+  BLOCK_TEMPLATE auto_tool_change_6 
+  {
+       Text[(Werkzeugnummer]
+       T[$mom_tool_number]
+       Text[)]
   }
 
   BLOCK_TEMPLATE auxfun 
@@ -664,7 +681,7 @@ FORMATTING
   BLOCK_TEMPLATE delay 
   {
        G[$mom_sys_delay_code($mom_delay_mode)]
-       dwell[$mom_delay_value]
+       dwell[4.2]
   }
 
   BLOCK_TEMPLATE end_of_path 
@@ -700,6 +717,11 @@ FORMATTING
   {
        M_spindle[$mom_sys_spindle_direction_code(OFF)]
        M_coolant[$mom_sys_coolant_code(OFF)]
+  }
+
+  BLOCK_TEMPLATE end_of_program_5 
+  {
+       G_cutcom[$mom_sys_cutcom_code(OFF)]
   }
 
   BLOCK_TEMPLATE from 
@@ -882,10 +904,10 @@ FORMATTING
        M_range[$mom_sys_spindle_range_code($mom_spindle_range)]\opt
   }
 
-  BLOCK_TEMPLATE spindle_rpm 
+  BLOCK_TEMPLATE spindle_rpm_1 
   {
        S[$mom_spindle_speed]
-       M_spindle[$mom_sys_spindle_direction_code($mom_spindle_direction)]\opt
+       M_spindle[$mom_sys_spindle_direction_code($mom_spindle_direction)]
   }
 
   BLOCK_TEMPLATE start_of_path 
@@ -900,7 +922,8 @@ FORMATTING
 
   BLOCK_TEMPLATE tool_change 
   {
-       G[$mom_sys_return_code]
+       G_motion[$mom_sys_rapid_code]
+       G[53]
   }
 
   BLOCK_TEMPLATE tool_change_1 
@@ -930,6 +953,13 @@ FORMATTING
        T[$mom_next_tool_number]
   }
 
+  BLOCK_TEMPLATE z_max 
+  {
+       G_motion[$mom_sys_rapid_code]
+       G[53]
+       Z[0]
+  }
+
   BLOCK_TEMPLATE post_cycle_set 
   {
        G_plane[$mom_sys_cutcom_plane_code($mom_cutcom_plane)]\opt
@@ -939,6 +969,11 @@ FORMATTING
        Z[$mom_cycle_feed_to_pos(2)]
        R[$mom_cycle_rapid_to_pos($mom_cycle_spindle_axis)]
        F[$feed]
+  }
+
+  BLOCK_TEMPLATE comment_blk 
+  {
+       " "
   }
 
   BLOCK_TEMPLATE comment_data 
