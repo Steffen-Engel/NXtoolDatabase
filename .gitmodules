@@ -1,0 +1,3 @@
+[submodule "linuxcnc-drehbank-config"]
+	path = linuxcnc-drehbank-config
+	url = ./linuxcnc-drehbank-config/

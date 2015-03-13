@@ -42,8 +42,8 @@ goto normal
 
 @copy %repo%\files\tool_database.dat %lib%\tool\metric\
 @copy %repo%\files\holder_database.dat %lib%\tool\metric\
-@copy %repo%\files\tool_materials.dat %lib%\feeds_speeds\
-@copy %repo%\files\tool_machining_data.dat %lib%\feeds_speeds\
+@copy %repo%\files\tool_materials.dat %lib%\feeds_speeds\ascii\
+@copy %repo%\files\tool_machining_data.dat %lib%\feeds_speeds\ascii\
 @copy %repo%\files\maschinenmodell\machine_database.dat %lib%\machine\ascii\
 @xcopy %repo%\files\maschinenmodell\BZT_PFX_500 %lib%\machine\installed_machines\BZT_PFX_500 /e/i/y
 goto start
